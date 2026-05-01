@@ -2307,13 +2307,6 @@ attribute_set:
                 info: Customer input schema the BPP publishes per product in the catalog response, persisting across the transaction for BAP to prompt for customer inputs in select and later steps.
                 owner: BPP
                 type: object
-              required:
-                _description:
-                  required: false
-                  usage: "true"
-                  info: BPP declares in on_search whether xinput (form data) is mandatory for order confirmation via this boolean flag. The catalog containing this flag is persisted across steps, allowing the BAP to determine the requirement throughout the transaction.
-                  owner: BPP
-                  type: boolean
               form_response:
                 status:
                   _description:
@@ -3977,13 +3970,6 @@ attribute_set:
                 info: It describes the outcome/response of submitting a form.
                 owner: BPP
                 type: object
-            required:
-              _description:
-                required: false
-                usage: "true"
-                info: BPP signals in on_select whether form input data is required for order confirmation. The BAP persists this flag in the order payload (session key action_order) and consults it in subsequent steps.
-                owner: BPP
-                type: boolean
           _description:
             required: false
             usage: ""
@@ -5500,13 +5486,6 @@ attribute_set:
                     - code: ESIGN
                       description: ESIGN of Loan Agreement
                       reference: <PR/Issue/Discussion Links md format text
-            required:
-              _description:
-                required: false
-                usage: "true"
-                info: BPP signals in on_select whether form input data is required for order confirmation. The BAP persists this flag in the order payload (session key action_order) and consults it in subsequent steps.
-                owner: BPP
-                type: boolean
             form_response:
               status:
                 _description:
