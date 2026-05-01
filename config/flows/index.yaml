@@ -1,325 +1,13 @@
 flows:
-  # - type: playground
-  #   id: Invoice_Based_Loan_Foreclosure
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_Foreclosure.yaml
-  # - type: playground
-  #   id: Invoice_Based_Loan_Foreclosure_Without_AA"
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_Foreclosure_Without_AA_.yaml
-  # - type: playground
-  #   id: Invoice_Based_Loan_Missed_EMI
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_Missed_EMI.yaml
-  # - type: playground
-  #   id: Invoice_Based_Loan_Missed_EMI_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan - Missed EMI Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_Missed_EMI_Without_AA.yaml
-  # - type: playground
-  #   id: Invoice_Based_Loan_Pre_Part_Payment
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_Pre_Part_Payment.yaml
-  # - type: playground
-  #   id: Invoice_Based_Loan_Pre_Part_Payment_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan - Pre-Part Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_Pre_Part_Payment_Without_AA.yaml
-  # - type: playground
-  #   id: Invoice_Based_Loan_With_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan with Account Aggregator & monitoring consent
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_With_AA.yaml
-  # - type: playground
-  #   id: Invoice_Based_Loan_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - INVOICE BASED LOAN
-  #   description: Invoice Based Loan - flow without Account Aggregator
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Invoice_Based_Loan_Without_AA.yaml
-  # - type: playground
-  #   id: Personal_Loan_Foreclosure_With_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Personal Loan - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Foreclosure_With_AA.yaml
-  # - type: playground
-  #   id: Personal_Loan_Foreclosure_Without_AA"
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Personal Loan - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Foreclosure_Without_AA_.yaml
-  # - type: playground
-  #   id: Personal_Loan_Missed_EMI
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Personal Loan - Missed EMI Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Missed_EMI.yaml
-  # - type: playground
-  #   id: Personal_Loan_Missed_EMI_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Personal Loan - Missed EMI Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Missed_EMI_Without_AA.yaml
-  # - type: playground
-  #   id: Personal_Loan_Multiple_Offers
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #   description: Personal Loan - Multiple Offers (Bureau Consent & AA Verification)
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Multiple_Offers.yaml
-  # - type: playground
-  #   id: Personal_Loan_Offline_And_Online
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #   description: Personal Loan - Offline & Online Hybrid Verification
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Offline_And_Online.yaml
-  # - type: playground
-  #   id: Personal_Loan_Pre_Part_Payment
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Personal Loan - Pre-Part Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Pre_Part_Payment.yaml
-  # - type: playground
-  #   id: Personal_Loan_Pre_Part_Payment_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Personal Loan - Pre-Part Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Pre_Part_Payment_Without_AA.yaml
-  # - type: playground
-  #   id: Personal_Loan_With_AA_And_Monitoring_Consent
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Personal Loan with Account Aggregator & monitoring consent
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_With_AA_And_Monitoring_Consent.yaml
-  # - type: playground
-  #   id: Personal_Loan_Without_AA_And_Monitoring_Consent
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #   description: Personal Loan flow without Account Aggregator
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Without_AA_And_Monitoring_Consent.yaml
-  # - type: playground
-  #   id: Personal_Loan_Without_Acount_Monitoring
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #   description: Personal Loan with Account Aggregator & monitoring consent
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Personal_Loan_Without_Acount_Monitoring.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Foreclosure
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Foreclosure.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Foreclosure_Without_AA"
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance - Loan Foreclosure
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Foreclosure_Without_AA_.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Missed_EMI
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance - Missed EMI Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Missed_EMI.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Missed_EMI_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance - Missed EMI Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Missed_EMI_Without_AA.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Multiple_Offers
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #   description: Purchase Finance - Multiple Offers (Bureau Consent & AA Verification)
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Multiple_Offers.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Pre_Part_Payment
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance - Pre-Part Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Pre_Part_Payment.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Pre_Part_Payment_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITHOUT_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance - Pre-Part Payment
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Pre_Part_Payment_Without_AA.yaml
-  # - type: playground
-  #   id: Purchase_Finance_With_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance with Account Aggregator & monitoring consent
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_With_AA.yaml
-  # - type: playground
-  #   id: Purchase_Finance_Without_AA
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - WITH_ACCOUNT_AGGREGATOR
-  #     - REPORTABLE
-  #     - PURCHASE FINANCE
-  #   description: Purchase Finance with Account Aggregator & monitoring consent
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Purchase_Finance_Without_AA.yaml
-  # - type: playground
-  #   id: Unified_Credit_Master_Search
-  #   usecase: UNIFIED CREDIT
-  #   tags:
-  #     - WORKBENCH
-  #     - REPORTABLE
-  #     - PERSONAL LOAN
-  #   description: Unified Credit Master Search
-  #   config:
-  #     $ref: ./UNIFIED CREDIT/Unified_Credit_Master_Search.yaml
-
   - type: playground
     id: master_search
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: Master Search
+    description: A borrower searches for available credit products in the marketplace; the lender responds with matching credit offerings and eligibility requirements.
     config:
       $ref: ./UNIFIED CREDIT/master_search.yaml
-
-  
   - type: playground
     id: business_term_loan_with_aa
     usecase: UNIFIED CREDIT
@@ -327,11 +15,9 @@ flows:
       - WORKBENCH
       - REPORTABLE
       - PERSONAL LOAN
-    description: Business Loan - Term Loan with Offline & Online Journey
+    description: End-to-end personal loan origination enabling borrowers to discover offers, apply through dynamic forms with Account Aggregator-enabled financial verification, and receive loan confirmation.
     config:
       $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_AA.yaml
-
-
   - type: playground
     id: business_term_loan_with_offline_online
     usecase: UNIFIED CREDIT
@@ -339,10 +25,9 @@ flows:
       - WORKBENCH
       - REPORTABLE
       - PERSONAL LOAN
-    description: Business Loan - Term Loan with Offline & Online Journey
+    description: End-to-end personal loan origination from product discovery through multi-stage dynamic application to confirmation, supporting both online and offline channels.
     config:
       $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_offline_online_journey.yaml
-
   - type: playground
     id: business_term_loan_without_aa
     usecase: UNIFIED CREDIT
@@ -350,10 +35,9 @@ flows:
       - WORKBENCH
       - REPORTABLE
       - PERSONAL LOAN
-    description: Business Loan - Term Loan without Account Aggregator
+    description: Comprehensive business term loan application where borrowers complete a multi-stage guided intake process to submit financial documentation and information directly, without Account Aggregator assistance for automated financial data retrieval.
     config:
       $ref: ./UNIFIED CREDIT/Business_Term_Loan_without_aa.yaml
-
   - type: playground
     id: business_term_loan_with_gst_data
     usecase: UNIFIED CREDIT
@@ -361,51 +45,42 @@ flows:
       - WORKBENCH
       - REPORTABLE
       - PERSONAL LOAN
-    description: Business Loan - Term Loan with GST Data
+    description: Business term loan application where borrowers search and select loan products, submit GST documentation through multi-stage application forms, and receive approval confirmation with loan updates.
     config:
-      $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_GST_data.yaml        
-
+      $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_GST_data.yaml
   - type: playground
     id: lamf_credit_line_journey
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: LAMF - Credit Line
+    description: Customer journey for discovering and applying for a credit line through multiple rounds of eligibility verification and document submission, culminating in final confirmation. The flow exercises sequential search, selection, and dynamic form-based application steps for credit assessment and approval.
     config:
       $ref: ./UNIFIED CREDIT/LAMF_credit_line_journey_deployment_config.yaml
-
   - type: playground
     id: lamf_credit_line_with_mfc_offline_journey
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: LAMF - Credit Line with MFC (Offline Journey)
+    description: Offline-enabled credit line origination journey where customers apply for credit products through merchant channels with dynamic form-based verification and confirmation.
     config:
-      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_Offline_Journey.yaml  
-
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_Offline_Journey.yaml
   - type: playground
     id: lamf_credit_line_with_mfc
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: LAMF - Credit Line with MFC
+    description: Customer applies for a credit line secured by movable collateral, proceeding through multiple verification stages with dynamic forms before final loan confirmation.
     config:
-      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC.yaml       
-
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC.yaml
   - type: playground
     id: lamf_credit_line_with_rta
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: LAMF - Credit Line with MFC
+    description: Iterative credit line application with real-time assessment, enabling borrowers to qualify through adaptive forms with progressive eligibility validation at each step.
     config:
-      $ref: ./UNIFIED CREDIT/lamf_credit_line_with_rta_deployment_config.yaml       
-
-
-         
-
-      
+      $ref: ./UNIFIED CREDIT/lamf_credit_line_with_rta_deployment_config.yaml

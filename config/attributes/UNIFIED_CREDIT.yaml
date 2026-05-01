@@ -40,7 +40,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BAP
             type: object
         _description:
@@ -281,7 +281,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Descriptor defining characteristics of the category the BAP is searching for. BAP mints on search; BPP echoes in on_search.
+              info: Descriptor defining characteristics of the category the BAP is searching for, minted on search and echoed in on_search.
               owner: BAP
               type: object
           _description:
@@ -293,7 +293,7 @@ attribute_set:
         _description:
           required: true
           usage: ""
-          info: The BAP declares the consumer's intent to buy or avail a product or service, including what they want, who they prefer, where and when they need fulfillment, and how they plan to pay. The BPP uses this intent to search its catalog and surface products or services that match the consumer's needs.
+          info: The BAP declares the consumer's intent to buy or avail a product or service—what they want, who they prefer, where and when they need fulfillment, and how they plan to pay. The BPP uses this intent to search its catalog and surface matching products or services.
           owner: BAP
           type: object
         provider:
@@ -324,7 +324,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Form containing applicant and request information. The BAP submits it in search to enable product matching; the BPP echoes it in on_search.
+                  info: Form for applicant and request information that the BAP submits in search for product matching; the BPP echoes it in on_search.
                   owner: BAP
                   type: object
                 data:
@@ -339,7 +339,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: BAP provides the PAN form data in search; BPP echoes it in on_search.
+                      info: Container for PAN form data that BAP provides in search and BPP echoes in on_search.
                       owner: BAP
                       type: object
                   fullName:
@@ -353,7 +353,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: ""
+                      info: The full name of the buyer performing the search. The BAP provides this to enable the BPP to identify the customer and personalize the search context.
                       owner: BAP
                       type: object
                   dob:
@@ -367,7 +367,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The buyer's date of birth, supplied as requested by the provider for age verification or regulatory compliance during search.
                       owner: BAP
                       type: object
                   addressL1:
@@ -375,13 +375,13 @@ attribute_set:
                       _description:
                         required: false
                         usage: ""
-                        info: First line of address provided in the search form input and validated by the system.
+                        info: First line of address the BAP collects and provides in the search form input, validated by the system in the validate step.
                         owner: BAP
                         type: string
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: First line of the buyer's address that the BAP provides in the search request to enable location-aware offer filtering and availability checks by the BPP.
                       owner: BAP
                       type: object
                   addressL2:
@@ -389,13 +389,13 @@ attribute_set:
                       _description:
                         required: false
                         usage: ""
-                        info: <no-enough-data>
+                        info: The BAP provides the second line of the buyer's address to enable the provider to process location-specific searches or fulfill delivery area requirements. This field captures supplementary address details such as apartment number, suite, block, or additional location descriptors.
                         owner: BAP
                         type: string
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Line address 2 of the user
                       owner: BAP
                       type: object
                   city:
@@ -403,13 +403,13 @@ attribute_set:
                       _description:
                         required: false
                         usage: ""
-                        info: City value the BAP sets in the search request. The value is validated during search processing.
+                        info: City location the BAP provides in the form during search; the BPP validates this value in on_search.
                         owner: BAP
                         type: string
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The city where the buyer is located. The BPP uses this to filter and return location-specific results and services.
                       owner: BAP
                       type: object
                   state:
@@ -423,7 +423,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Form field data state provided by the BAP in the search request.
                       owner: BAP
                       type: object
                   pincode:
@@ -431,13 +431,13 @@ attribute_set:
                       _description:
                         required: false
                         usage: ""
-                        info: Postal code the BAP provides in the provider's form input during search; the system validates this value.
+                        info: Postal code the BAP provides in the provider form during search; the system validates this value to assess provider eligibility.
                         owner: BAP
                         type: string
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Postal code the BAP provides in the provider form during search; the system validates this value to assess provider eligibility.
                       owner: BAP
                       type: object
                   constitution:
@@ -451,7 +451,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Business constitution details BAP provides in search; BPP validates in on_search.
                       owner: BAP
                       type: object
                   businessPan:
@@ -479,7 +479,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The legally registered name of the business as per PAN records, which the BAP provides to enable identity verification and loan eligibility assessment by the BPP.
                       owner: BAP
                       type: object
                   doi:
@@ -493,7 +493,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: describes the details of DOI
                       owner: BAP
                       type: object
                   natureOfBusiness:
@@ -507,7 +507,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: (empty)
+                      info: BAP specifies the nature of business (manufacturing, retail, services, agriculture) to characterize its core activity and operating model for BPP search filtering and categorization.
                       owner: BAP
                       type: object
                   udyamNumber:
@@ -521,7 +521,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The BAP provides the Udyam number, the 16-digit permanent identifier issued by India's Ministry of MSME, to identify or filter for registered micro, small, and medium enterprise providers in the search.
                       owner: BAP
                       type: object
                   gst:
@@ -535,7 +535,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The GST registration number of the business applying for the loan. The BAP provides this to enable verification and identification of the business entity during the search request.
                       owner: BAP
                       type: object
                   annualTurnover:
@@ -549,17 +549,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: |-
-                        The input specifies a container (`is_leaf: false`) at `message.intent.provider.items.xinput.form.data.annualTurnover` observed in business term loan flows. The evidence tiers provide:
-
-                        - **Tier 1 (openapi)**: null — no authoritative spec text
-                        - **Tier 2 (existing_leaf)**: not provided — no prior curated description
-                        - **Tier 3 (referenced_in)**: empty — no code references
-                        - **Tier 7 (cross_flow)**: `set_in_generate: true` — BAP mints this container during search, but `asserted_in_validate: false` and `consumed_across_steps: false` mean no round-trip or persistence signal
-
-                        The CONTAINER RULE states: "If openapi and existing_leaf carry no description and refs only show structural traversal, return empty."
-
-                        All three conditions are met. No meaningful structural or semantic signal exists to describe the container's role.
+                      info: Container for annual turnover information that the BAP provides in the search request and is validated during transaction processing.
                       owner: BAP
                       type: object
                   businessEmail:
@@ -573,7 +563,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Email address of the business applying for the loan. The BAP submits this in the search request to identify the applicant.
                       owner: BAP
                       type: object
                   businessAddressL1:
@@ -587,7 +577,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: First line of the business address for the loan applicant. The BAP includes this to enable provider matching and verification during the search phase.
                       owner: BAP
                       type: object
                   businessAddressL2:
@@ -601,7 +591,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The second address line of the business applying for the loan. Providers use this to identify and verify the applicant's business location during search evaluation.
                       owner: BAP
                       type: object
                   businessCity:
@@ -615,7 +605,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: ""
+                      info: The city where the business seeking the loan is located. The BAP provides this to enable providers to filter loan products by geographic coverage and applicable regulations.
                       owner: BAP
                       type: object
                   businessState:
@@ -629,7 +619,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The state where the business seeking the loan is located. The BAP provides this to enable providers to filter loan products by geographic coverage.
                       owner: BAP
                       type: object
                   businessPincode:
@@ -643,7 +633,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: ""
+                      info: BAP submits business pincode form data in search; BPP echoes it in on_search.
                       owner: BAP
                       type: object
                   bureauConsent:
@@ -657,7 +647,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Bureau consent information container that BAP provides in search requests; BPP validates during validation.
+                      info: Bureau consent information container BAP provides in search requests; BPP validates.
                       owner: BAP
                       type: object
                   userType:
@@ -665,13 +655,13 @@ attribute_set:
                       _description:
                         required: false
                         usage: ""
-                        info: <no-enough-data>
+                        info: BAP specifies user type in search; BPP echoes it in on_search.
                         owner: BAP
                         type: string
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Specifies the borrower's business classification—entity type, legal status, or industry—to enable the provider to search for and recommend loan products suited to that borrower type.
                       owner: BAP
                       type: object
                   gender:
@@ -685,7 +675,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: BAP provides gender form data in the search request and BPP echoes the same data in the on_search response.
                       owner: BAP
                       type: object
                   employmentType:
@@ -727,7 +717,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The mobile number of the user applying for the loan, provided by the BAP to enable BPPs to identify the applicant and tailor suitable offerings.
                       owner: BAP
                       type: object
                   emailId:
@@ -741,7 +731,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: BAP provides this form data container for email input in search; the data is validated but not carried forward to subsequent steps.
+                      info: BAP provides email input form data in search; validated at this step but not carried forward to subsequent steps.
                       owner: BAP
                       type: object
                   endUse:
@@ -749,13 +739,13 @@ attribute_set:
                       _description:
                         required: false
                         usage: ""
-                        info: <no-enough-data>
+                        info: BAP includes endUse in search; BPP sets and asserts it in generate and validate.
                         owner: BAP
                         type: string
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The intended purpose for which the borrower will use the loan funds. Providers use this to offer loan products and terms aligned with the specified end use.
                       owner: BAP
                       type: object
                   statementUpload:
@@ -783,15 +773,141 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Enables applicants to upload bank account statements or previous loan statements for lender verification as part of the loan product search request.
                       owner: BAP
                       type: object
                   _description:
                     required: false
                     usage: ""
-                    info: Form data BAP provides in LAMF credit line search; validators across MFC, offline, and RTA flows verify it is populated before processing the request.
+                    info: Form data the BAP provides in search for credit-line eligibility; validators across MFC, offline, and RTA flows verify it is populated.
                     owner: BAP
                     type: object
+                  aa_id:
+                    value:
+                      _description:
+                        required: false
+                        usage: 8360124980@finvu
+                        info: BAP submits the Aggregator Account identifier in the search form; BPP validates it in on_search. The value anchors to the session and is reused across all downstream steps.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: BAP mints on search; BPP echoes in on_search; the value persists across steps.
+                      owner: BAP
+                      type: object
+                  contactNumber:
+                    value:
+                      _description:
+                        required: false
+                        usage: dsadsadasdasd
+                        info: BAP provides the applicant's contact number in the loan search request; BPP echoes it in on_search.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: The user's contact number provided by the BAP in the search request to enable the BPP to validate contact information or facilitate direct communication during the transaction.
+                      owner: BAP
+                      type: object
+                  email:
+                    value:
+                      _description:
+                        required: false
+                        usage: dsada@dsadas.dasd
+                        info: Applicant email in search request from BAP; BPP echoes in on_search response.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: Applicant email in search request from BAP; BPP echoes in on_search response.
+                      owner: BAP
+                      type: object
+                  gstinProfile:
+                    value:
+                      _description:
+                        required: false
+                        usage: ""
+                        info: The BAP specifies the provider's GSTIN, a unique 15-digit alphanumeric code assigned to GST-registered businesses in India, to identify and filter eligible providers during the search request.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: The BAP provides its GSTIN, a unique 15-digit identifier for Goods and Services Tax-registered entities in India, enabling the BPP to validate the buyer's tax registration and eligibility.
+                      owner: BAP
+                      type: object
+                  gstr1:
+                    value:
+                      _description:
+                        required: false
+                        usage: ""
+                        info: GST Return 1 data supplied by BAP in search; echoed by BPP in on_search.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: The BAP specifies GSTR-1 return details (the monthly or quarterly GST filing for outward supplies of goods and services) to establish the provider's Input Tax Credit eligibility for the transaction.
+                      owner: BAP
+                      type: object
+                  gstr2A:
+                    value:
+                      _description:
+                        required: false
+                        usage: ""
+                        info: BAP provides GSTR-2A value on search; BPP validates in on_search.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: BAP provides GST Return 2A filing data in search requests for business lending assessment.
+                      owner: BAP
+                      type: object
+                  gstr3B:
+                    value:
+                      _description:
+                        required: false
+                        usage: ""
+                        info: The BAP submits the GSTR-3B tax summary report value, which contains the taxpayer's self-declared outward supplies, input tax credit claimed, and net tax payable figures. This information enables verification or validation of the applicant's tax compliance status during the search request.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: The BAP submits GSTR-3B, a self-declared monthly or quarterly GST return containing outward supplies, input tax credit claimed, and net tax payable figures, to provide tax compliance context for the search. This enables the BPP to understand the BAP's tax filing requirements and offer relevant services accordingly.
+                      owner: BAP
+                      type: object
+                  tnc:
+                    value:
+                      _description:
+                        required: false
+                        usage: ""
+                        info: The BAP includes the seller-provided terms and conditions value in the search request to ensure both parties reference uniform transaction terms during provider selection.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: Array of terms and conditions the BAP includes in the search request for loan items.
+                      owner: BAP
+                      type: object
+                  rtaName:
+                    value:
+                      _description:
+                        required: false
+                        usage: cams
+                        info: Name of the Registrar and Transfer Agent (RTA) that the BAP specifies in search; the BPP validates this value.
+                        owner: BAP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: Name of the Registrar and Transfer Agent (RTA) that the BAP specifies in search; the BPP validates this value.
+                      owner: BAP
+                      type: object
               form_response:
                 status:
                   _description:
@@ -810,8 +926,8 @@ attribute_set:
                     type: string
                 _description:
                   required: false
-                  usage: --
-                  info: Describes the response to a form submission
+                  usage: ""
+                  info: Array of form responses provided by the BAP in the search request.
                   owner: BAP
                   type: object
               _description:
@@ -839,13 +955,13 @@ attribute_set:
                   _description:
                     required: false
                     usage: ""
-                    info: <no-enough-data>
+                    info: Describes the details of the form headings.
                     owner: BAP
                     type: object
                 _description:
                   required: false
                   usage: ""
-                  info: ""
+                  info: Input specification the BAP includes on search to define required product attributes.
                   owner: BAP
                   type: object
             _description:
@@ -857,7 +973,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BAP specifies the provider the customer intends to order from during search.
+            info: The BAP specifies the provider the customer intends to order from during search; the BPP validates this in on_search.
             owner: BAP
             type: object
           fulfillments:
@@ -955,7 +1071,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: The BAP specifies acceptable payment methods and conditions in the search request to help the BPP identify compatible service offerings.
+            info: Container where the BAP specifies acceptable payment methods and conditions in search, helping the BPP identify compatible offerings.
             owner: BAP
             type: object
         tags:
@@ -984,7 +1100,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: A descriptor that provides structured metadata for the tags in this search intent, enabling the BPP to interpret intent context and apply appropriate filtering or matching logic.
+              info: BAP provides a descriptor with structured metadata for the tags in this search intent to help the BPP interpret the context and apply filtering or matching logic.
               owner: BAP
               type: object
           list:
@@ -999,7 +1115,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: Container for tag descriptors that the BAP sets in search requests; these values are asserted and validated in subsequent steps.
+                info: Container for tag descriptors the BAP sets in search; these values are asserted and validated in subsequent steps.
                 owner: BAP
                 type: object
             value:
@@ -1012,7 +1128,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: <no-enough-data>
+              info: BAP supplies tags to filter search results and obtain more relevant BPP responses. Each tag narrows the search scope to specific criteria.
               owner: BAP
               type: object
           _description:
@@ -1072,7 +1188,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BPP
             type: object
         _description:
@@ -1189,7 +1305,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: The context carries transaction and protocol metadata from the search request; the BPP echoes it in on_search to correlate the callback with the BAP's session.
+        info: The BPP echoes the context from the search request to correlate this callback response with the BAP's session.
         owner: BPP
         type: object
     message:
@@ -1205,7 +1321,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BPP includes the descriptor as the catalog's metadata container to communicate characteristics and features of the offered product. This metadata persists in the session and is reused by later steps.
+            info: The catalog's metadata container where BPP communicates product characteristics and features; persists in the session and consumed by subsequent steps.
             owner: BPP
             type: object
         providers:
@@ -1262,7 +1378,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: BPP returns the provider institution's identity in on_search; BAP stores and references this descriptor throughout the flow.
+              info: BPP returns the provider institution's identity in this descriptor during on_search; BAP persists it as part of the session catalog for use in subsequent steps.
               owner: BPP
               type: object
           categories:
@@ -1400,13 +1516,13 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Identifies and labels a product category in the catalog; the BPP provides this during on_search and it persists with the catalog across all subsequent steps.
+                info: Identifies and labels a product category in the catalog; the BPP provides this in on_search and it persists with the catalog across subsequent steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Categories in the catalog group offerings for identification.
+              info: Categories that group offerings for identification within the on_search catalog returned by BPP, retained by the BAP for downstream reuse.
               owner: BPP
               type: object
             parent_category_id:
@@ -1463,7 +1579,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: The BPP returns this container in on_search to describe the distinctive features, benefits, and unique aspects of each product or service. The catalog is anchored in the session and reused in later steps.
+                info: Metadata describing each product offering's distinctive features and benefits; provided by the BPP in on_search and reused in later steps.
                 owner: BPP
                 type: object
               code:
@@ -1497,7 +1613,7 @@ attribute_set:
                   _description:
                     required: false
                     usage: ""
-                    info: Metadata describing the primary input field required from the customer for this item, returned by the BPP in on_search and retained as part of the catalog throughout the transaction.
+                    info: The BPP returns this descriptor of the primary input field required from the customer in on_search; the BAP retains it as part of the catalog throughout the transaction.
                     owner: BPP
                     type: object
                   code:
@@ -1538,7 +1654,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Container for header metadata defining additional customer input required to avail this item, returned by the BPP in search and persisted in the catalog session for reuse across later steps.
+                  info: BPP returns header metadata defining additional customer input required to use the item in search, persisted in catalog for reuse across steps.
                   owner: BPP
                   type: object
                 headings:
@@ -1609,7 +1725,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The user's PAN number provided in the form data to identify the form recipient in the BPP's on_search response.
                       owner: BPP
                       type: object
                   fullName:
@@ -1623,7 +1739,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Full name of the user for whom the input form is presented. The BPP includes this field as part of the form data to uniquely identify the user in the search response.
                       owner: BPP
                       type: object
                   dob:
@@ -1637,7 +1753,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Form input the BPP provides in on_search; the catalog persists in session for use in subsequent steps.
+                      info: Date-of-birth form input provided by the BPP in on_search; the catalog persists in session for the BAP to reference in subsequent steps.
                       owner: BPP
                       type: object
                   addressL1:
@@ -1651,7 +1767,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The first line of the user's address as specified in the provider's form for service delivery. The BPP includes this field to collect address information necessary to fulfill the requested service.
                       owner: BPP
                       type: object
                   addressL2:
@@ -1679,7 +1795,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The user's pincode from the search request, included in the form data by the BPP to maintain geographical context. This enables location-specific catalog filtering and customization.
                       owner: BPP
                       type: object
                   city:
@@ -1693,7 +1809,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The user's city location, required by the seller to process the search request and deliver relevant results.
                       owner: BPP
                       type: object
                   state:
@@ -1707,7 +1823,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: ""
+                      info: The user's current loan eligibility or qualification state. The BPP includes this to convey the user's qualification status or position within the assessment process.
                       owner: BPP
                       type: object
                   constitution:
@@ -1721,7 +1837,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The legal structure or ownership status of the borrower (e.g., proprietary, partnership, private limited company). The BPP includes this form field to capture or validate the borrower's constitutional status for loan eligibility assessment.
                       owner: BPP
                       type: object
                   businessPan:
@@ -1735,7 +1851,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: (no output)
+                      info: The business PAN number that the BPP requires from the BAP for regulatory verification and service provisioning. This field captures the Permanent Account Number necessary for transaction processing and compliance.
                       owner: BPP
                       type: object
                   businessPanName:
@@ -1749,7 +1865,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Form input container within the catalog that the BPP returns in on_search and persists across subsequent transaction steps.
+                      info: Form input container the BPP returns in on_search, retained by the BAP across the transaction for subsequent steps.
                       owner: BPP
                       type: object
                   doi:
@@ -1763,7 +1879,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The user's date of birth as requested in the BPP's search form input for customer identification and regulatory compliance verification.
                       owner: BPP
                       type: object
                   natureOfBusiness:
@@ -1777,7 +1893,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: The BPP returns this input element in the search catalog to collect business nature details; the catalog is persisted as a session resource and reused in select and confirm steps.
+                      info: BPP returns this form-input container in the search catalog for business-nature collection; the persisted catalog is reused in select and confirm steps.
                       owner: BPP
                       type: object
                   udyamNumber:
@@ -1791,7 +1907,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: BPP returns UDYAM registration number field in the search catalog form; value persists across flows for downstream steps.
                       owner: BPP
                       type: object
                   gst:
@@ -1805,7 +1921,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Holds GST-related form data in the provider's extended input, returned by the BPP in on_search and cached by the BAP for subsequent steps.
+                      info: Container for GST form data in the provider's extended input, returned by the BPP in on_search and persisted in the BAP's session for use in select and later steps.
                       owner: BPP
                       type: object
                   annualTurnover:
@@ -1819,7 +1935,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Annual turnover data in the BPP's catalog; persists for use in subsequent transaction steps.
+                      info: BPP returns annual turnover form input in the on_search catalog; the BAP persists this in session and reuses it across subsequent transaction steps.
                       owner: BPP
                       type: object
                   businessEmail:
@@ -1833,16 +1949,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: |-
-                        I need to analyze this according to the CONTAINER RULE.
-
-                        **Conditions check:**
-                        - is_leaf = false (container) ✓
-                        - openapi carries no description (openapi is null) ✓
-                        - existing_leaf carries no description (not provided) ✓
-                        - referenced_in shows only structural/alias traversal (select_1 catalog reference) ✓
-
-                        All four conditions are met. Per the CONTAINER RULE: "If openapi and existing_leaf carry no description and refs only show structural traversal, return empty.
+                      info: Email address of the business applying for the loan, included by the BPP as a required form input for loan processing and direct communication with the applicant.
                       owner: BPP
                       type: object
                   businessAddressL1:
@@ -1856,7 +1963,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: First line of the provider's business physical address as specified by the BPP in the form input data.
+                      info: The BPP returns the first line of the provider's business address within the form input data; the catalog persists this value for reuse in downstream steps.
                       owner: BPP
                       type: object
                   businessAddressL2:
@@ -1870,7 +1977,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Form data container that the BPP provides in on_search, anchored in the session and used in subsequent steps.
+                      info: Container for business address form data returned by the BPP in on_search, persisted as part of the session-bound catalog and available to subsequent steps.
                       owner: BPP
                       type: object
                   businessCity:
@@ -1884,7 +1991,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: ""
+                      info: City location of the business entity seeking the loan, as required by the BPP in the application form.
                       owner: BPP
                       type: object
                   businessState:
@@ -1898,7 +2005,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Holds form state data returned by the BPP in the search response that the BAP must preserve from the catalog for subsequent steps in the transaction.
+                      info: Form state data returned by the BPP in the search response; the BAP anchors this in the session under the catalog key and reuses it across subsequent steps.
                       owner: BPP
                       type: object
                   businessPincode:
@@ -1912,7 +2019,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Business pincode form input in the on_search catalog; anchored in the session and reused by subsequent steps.
+                      info: BPP sends business pincode form structure in on_search catalog; BAP stores in session and populates in init/confirm.
                       owner: BPP
                       type: object
                   bureauConsent:
@@ -1926,9 +2033,16 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Bureau consent in a loan, often referred to as Credit Bureau Consent or CIBIL Consent, is the formal authorization a borrower gives to a lender (bank/NBFC) to access their credit information report from credit information companies.
                       owner: BPP
                       type: object
+                    defaultValue:
+                      _description:
+                        required: false
+                        usage: "true"
+                        info: Boolean default for the user's consent to bureau data access; BPP returns this in the on_search catalog to pre-populate the form field, and the value is anchored in the session catalog for reuse across later steps.
+                        owner: BPP
+                        type: boolean
                   userType:
                     type:
                       _description:
@@ -1940,7 +2054,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: The borrower's classification by business entity structure and legal status, determining applicable credit products and regulatory requirements.
                       owner: BPP
                       type: object
                   gender:
@@ -1954,7 +2068,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Gender of the applicant.
                       owner: BPP
                       type: object
                   employmentType:
@@ -1968,7 +2082,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Employment type form field; BPP defines it in on_search and BAP uses the persisted field across steps for employment data collection and validation.
+                      info: BPP defines employment type form field in on_search; BAP persists in catalog, reuses across steps for employment data collection and validation.
                       owner: BPP
                       type: object
                   annualIncome:
@@ -1982,7 +2096,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: BPP returns the form with the annualIncome container in on_search. Validated and anchored in session, the BAP populates this container in select and later steps.
+                      info: BPP returns annualIncome container in on_search; validated and anchored in session, BAP populates it in select and later steps.
                       owner: BPP
                       type: object
                   mobileNumber:
@@ -1996,7 +2110,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: Form data container from BPP's on_search response, persisted across the transaction session and reused by subsequent steps.
+                      info: Form data container from BPP's on_search, persisted in session and consumed by subsequent steps.
                       owner: BPP
                       type: object
                   emailId:
@@ -2010,7 +2124,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Container provided by the BPP in the form input data; anchored in the session's catalog for reuse across subsequent steps.
                       owner: BPP
                       type: object
                   endUse:
@@ -2024,7 +2138,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: The BPP returns this container in the on_search response; it is persisted in the session as part of the catalog and reused in later steps.
+                      info: BPP returns this container in on_search; it is persisted in session as part of the catalog and reused in later steps.
                       owner: BPP
                       type: object
                   statementUpload:
@@ -2038,7 +2152,7 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: BPP returns statement upload form input fields in the on_search catalog; this catalog is persisted in session and BAP reuses it across select and subsequent steps.
+                      info: BPP returns statement upload form input fields in on_search; BAP persists this catalog and reuses it across select and later steps.
                       owner: BPP
                       type: object
                   rtaName:
@@ -2052,19 +2166,145 @@ attribute_set:
                     _description:
                       required: false
                       usage: ""
-                      info: <no-enough-data>
+                      info: Name of the Registrar and Transfer Agent (RTA) assigned to maintain records of the customer's investment or loan folio.
                       owner: BPP
                       type: object
                   _description:
                     required: false
                     usage: ""
-                    info: Form field definitions the BPP provides in on_search for the BAP to populate and resubmit, persisted in the session catalog.
+                    info: Form field definitions the BPP provides in on_search for the BAP to populate and resubmit; persisted in the session catalog and reused across subsequent steps.
                     owner: BPP
                     type: object
+                  aa_id:
+                    type:
+                      _description:
+                        required: false
+                        usage: string
+                        info: AA ID input is defined as string type for Aadhaar identifier values.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: Unique identifier of the buyer's account aggregator for routing consent requests and data exchanges. The BPP includes this in the form data to enable proper aggregator identification during the search response.
+                      owner: BPP
+                      type: object
+                  contactNumber:
+                    type:
+                      _description:
+                        required: false
+                        usage: string
+                        info: Contact number field type in xinput, provided by BPP in on_search; persisted in catalog for subsequent use.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: BPP includes this object in the search response; it is anchored in session and consumed across subsequent steps.
+                      owner: BPP
+                      type: object
+                  email:
+                    type:
+                      _description:
+                        required: false
+                        usage: string
+                        info: Email form field type returned by the BPP in search. The catalog persists in the session and is referenced by the BAP across select and subsequent steps.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: The BPP returns the catalog in on_search with provider offerings and input forms, which the BAP holds and references across select, init, confirm, and other steps.
+                      owner: BPP
+                      type: object
+                  gstinProfile:
+                    type:
+                      _description:
+                        required: false
+                        usage: file
+                        info: BPP provides the GSTIN profile type in the on_search catalog response; this catalog is persisted and reused across subsequent transaction steps.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: The catalog containing gstinProfile is anchored in the BAP's session and reused across subsequent steps of the transaction.
+                      owner: BPP
+                      type: object
+                  gstr1:
+                    type:
+                      _description:
+                        required: false
+                        usage: file
+                        info: BPP specifies in on_search the input type for GST return (GSTR1) data collection; the catalog is anchored in the transaction session and reused across subsequent steps.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: Collects GSTR-1 monthly or quarterly GST return details, including outward supplies and invoices, to enable Input Tax Credit claims and ensure tax compliance. BPP requires this form field to confirm that registered taxpayers declare their mandated tax documentation.
+                      owner: BPP
+                      type: object
+                  gstr2A:
+                    type:
+                      _description:
+                        required: false
+                        usage: file
+                        info: Type field for gstr2A documents in the xinput form, specified by BPP in on_search and persisted in the catalog session for BAP use across steps.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: (empty response per CONTAINER RULE — no openapi/existing_leaf description and referenced_in shows only structural traversal)
+                      owner: BPP
+                      type: object
+                  gstr3B:
+                    type:
+                      _description:
+                        required: false
+                        usage: file
+                        info: The BPP specifies the input type for GSTR-3B form data in on_search. The value is anchored in the session and reused by the BAP across subsequent steps.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: The GSTR-3B form field captures the mandatory monthly or quarterly GST tax summary return, containing self-declared figures for outward supplies, input tax credit claimed, and net tax payable.
+                      owner: BPP
+                      type: object
+                  tnc:
+                    type:
+                      _description:
+                        required: false
+                        usage: boolean
+                        info: Type specification for the terms and conditions input field, declared by the BPP in on_search and persisted in the session for BAP to interpret in later steps.
+                        owner: BPP
+                        type: string
+                    display:
+                      _description:
+                        required: false
+                        usage: https://icicibank.co.in/loans/tnc.html
+                        info: URL to the Terms & Conditions document returned by BPP in on_search; the value persists in the session catalog and is reused across subsequent steps.
+                        owner: BPP
+                        type: string
+                    _description:
+                      required: false
+                      usage: ""
+                      info: Array of form data within the product offering, provided by the BPP in the on_search response and held in the session catalog for consumption in downstream steps.
+                      owner: BPP
+                      type: object
+                  consent_handler:
+                    _description:
+                      required: false
+                      usage: d4cabdca-f621-43f7-9c8b-b5331d329e09
+                      info: BPP generates this consent handler identifier in on_search and embeds it in the form data; it persists in the session catalog and is reused across downstream steps.
+                      owner: BPP
+                      type: string
               _description:
                 required: false
                 usage: ""
-                info: Container for the customer input schema the BPP publishes per product item in the catalog response. This persists across the transaction and the BAP uses it to prompt for customer inputs in select and later steps.
+                info: Customer input schema the BPP publishes per product in the catalog response, persisting across the transaction for BAP to prompt for customer inputs in select and later steps.
                 owner: BPP
                 type: object
               required:
@@ -2115,7 +2355,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Products or loan offerings from the provider in the search response; anchored in the transaction session and referenced in select and confirm.
+              info: The BPP returns products or loan offerings from this provider in the on_search response; the BAP references these items in select and confirm.
               owner: BPP
               type: object
             matched:
@@ -2157,7 +2397,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The item's pricing details, returned by the BPP in on_search and reused across subsequent steps.
+                info: Pricing details for each item returned by the BPP in on_search; the catalog payload is persisted in the BAP's session and reused across subsequent steps.
                 owner: BPP
                 type: object
             tags:
@@ -2178,7 +2418,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Item metadata tags provided by the BPP in the search catalog response; these persist as part of the catalog across subsequent steps.
+                info: Item metadata tags the BPP provides in the search catalog response, anchored in the session and reused by later steps.
                 owner: BPP
                 type: object
               descriptor:
@@ -2199,7 +2439,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: ""
+                  info: Describes the tag group's purpose or meaning, allowing the BAP to properly contextualize and display the tags to users. The descriptor serves as human-readable metadata for understanding what the tag group represents.
                   owner: BPP
                   type: object
               list:
@@ -2241,7 +2481,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Array of tags for the item; the BPP includes this in the on_search catalog response, and the catalog persists across the transaction for subsequent steps.
+                  info: Metadata tags for each catalog item the BPP returns in on_search; anchored in the session and reused across later steps.
                   owner: BPP
                   type: object
             fulfillment_ids:
@@ -2254,7 +2494,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: List of available providers returned by the BPP in on_search, showcasing their products or services. The provider list is anchored in session and reused across the transaction.
+            info: Array of providers returned by the BPP in on_search. The catalog containing these providers is anchored in session and reused throughout the transaction.
             owner: BPP
             type: object
           payments:
@@ -2268,7 +2508,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Payment and settlement methods the BPP specifies for this provider, anchored in the transaction session and reused by subsequent steps.
+              info: The BPP lists available payment and settlement methods for each provider; the catalog is anchored in the transaction session and reused by subsequent steps.
               owner: BPP
               type: object
             tags:
@@ -2324,7 +2564,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: Timing configuration for the payment method within the loan offering; the BPP returns this in on_search as part of the catalog and it persists through downstream transaction steps.
+                info: Payment method timing configuration returned by the BPP in on_search; BAP retains for reuse across downstream transaction steps.
                 owner: BPP
                 type: object
           tags:
@@ -2345,7 +2585,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Provider tags returned by BPP in on_search; the containing catalog persists for reference in downstream steps.
+              info: Provider-level tags in the BPP's on_search response; the catalog persists in session for reference in select and downstream steps.
               owner: BPP
               type: object
             descriptor:
@@ -2366,7 +2606,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: <no-enough-data>
+                info: descriptor of the tags provided.
                 owner: BPP
                 type: object
             list:
@@ -2388,7 +2628,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: ""
+                  info: The BPP provides this descriptor in on_search; it is validated in subsequent steps and persists across the entire transaction for reuse.
                   owner: BPP
                   type: object
               value:
@@ -2401,7 +2641,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Tags for each provider in the catalog returned by BPP in on_search; the BAP persists the catalog and references these tags in subsequent steps.
+                info: List of tags for each provider returned by the BPP in on_search, persisted by the BAP and referenced in subsequent transaction steps.
                 owner: BPP
                 type: object
           fulfillments:
@@ -2445,7 +2685,7 @@ attribute_set:
                 _description:
                   required: true
                   usage: ""
-                  info: The descriptor identifies each fulfillment tag in the catalog search response; the catalog persists in session and is reused across booking steps.
+                  info: The descriptor identifies each fulfillment tag in the BPP's on_search catalog; the BAP persists the full catalog in session and references it across subsequent booking steps.
                   owner: BPP
                   type: object
               list:
@@ -2467,7 +2707,7 @@ attribute_set:
                   _description:
                     required: true
                     usage: ""
-                    info: Descriptors for fulfillment tags returned in on_search; catalog persists in session for downstream reuse.
+                    info: Descriptors for each fulfillment tag in the on_search catalog, anchored in session for reuse across downstream steps.
                     owner: BPP
                     type: object
                 value:
@@ -2480,25 +2720,25 @@ attribute_set:
                 _description:
                   required: true
                   usage: ""
-                  info: The BPP advertises fulfillment tags in on_search; the catalog is persisted and reused by the BAP in select, confirm, and downstream steps.
+                  info: BPP advertises fulfillment tags in on_search; BAP persists and reuses in select, confirm, and downstream steps.
                   owner: BPP
                   type: object
               _description:
                 required: true
                 usage: ""
-                info: <no-enough-data>
+                info: The fulfillments involved in completing this order
                 owner: BPP
                 type: object
             _description:
               required: true
               usage: ""
-              info: <no-enough-data>
+              info: BPP lists fulfillment options from each provider in on_search; catalog persists in session for reuse across subsequent steps.
               owner: BPP
               type: object
         _description:
           required: true
           usage: ""
-          info: BPP returns the catalog describing products, services, payment terms, and fulfillment options offered. BAP caches this per context ttl for reuse across steps.
+          info: The BPP returns this in on_search describing products, services, payment terms, offers, and fulfillment options. The BAP caches it per context ttl and reuses it across subsequent steps.
           owner: BPP
           type: object
         fulfillments:
@@ -2618,7 +2858,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Container providing tag details; included by the BPP in on_search and saved by the BAP for reuse in subsequent steps.
+              info: The BPP populates tag descriptors in on_search; the BAP saves them as part of the catalog for reuse in later steps.
               owner: BPP
               type: object
           list:
@@ -2633,7 +2873,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: Metadata descriptor object for each tag in the catalog, persisted with the catalog throughout the transaction.
+                info: BPP returns this metadata descriptor for each tag in the on_search response, anchored in the session catalog for BAP reuse across later steps.
                 owner: BPP
                 type: object
             value:
@@ -2646,13 +2886,13 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Tag list within the catalog returned by the BPP in on_search; the entire catalog is persisted in the BAP session and reused across subsequent steps.
+              info: Container for tags within the BPP's catalog returned in on_search, persisted in the BAP session and referenced across subsequent transaction steps.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: ""
+            info: Tags are part of the catalog, which is anchored in session and reused across subsequent steps.
             owner: BPP
             type: object
       _description:
@@ -2706,7 +2946,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BAP
             type: object
         _description:
@@ -2823,7 +3063,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: Context is the transaction metadata container—comprising demographic, addressing, interoperability, and transaction details—that the BAP establishes on the initial request. At select, the BAP includes it unchanged to ensure both parties maintain session correlation and alignment.
+        info: Context carries transaction metadata that the BAP includes unchanged at select to maintain session correlation and alignment.
         owner: BAP
         type: object
     message:
@@ -2837,9 +3077,9 @@ attribute_set:
               owner: BAP
               type: string
           _description:
-            required: false
+            required: true
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BAP
             type: object
         fulfillments:
@@ -2928,7 +3168,7 @@ attribute_set:
               owner: BAP
               type: object
           _description:
-            required: false
+            required: true
             usage: ""
             info: Ordered list outlining how the BAP wants the order fulfilled, proposed on select and validated by the BPP in on_select. The specification persists in session for reuse in subsequent steps.
             owner: BAP
@@ -2990,7 +3230,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Form container for additional input requirements specified by the BPP in on_select; BAP echoes in select and the form persists across subsequent transaction steps.
+                info: Form container for additional input requirements the BPP generates in on_select; BAP echoes it in select and the form persists across subsequent transaction steps.
                 owner: BAP
                 type: object
               data:
@@ -3025,7 +3265,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Form input container populated by BAP during select, echoed by BPP in on_select, and persisted as part of the order for use in subsequent steps.
+                  info: BAP populates this form input container during select; BPP echoes it in on_select and persists it as part of the order session for use in subsequent steps.
                   owner: BAP
                   type: object
             _description:
@@ -3053,7 +3293,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Descriptor for the xinput header, providing metadata such as name, code, and label that convey the header's purpose and context to the BPP.
                   owner: BAP
                   type: object
               _description:
@@ -3063,9 +3303,9 @@ attribute_set:
                 owner: BAP
                 type: object
           _description:
-            required: false
+            required: true
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BAP
             type: object
           parent_item_id:
@@ -3094,7 +3334,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Metadata container for item tag details that the BAP specifies during select and persists in session under 'action_order' for reuse across subsequent steps.
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
                 owner: BAP
                 type: object
             list:
@@ -3116,7 +3356,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists through the order session for validation and confirmation.
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
                   owner: BAP
                   type: object
               value:
@@ -3129,25 +3369,25 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Item-level tags that BAP populates during select; values are persisted as action_order and reused across init, confirm, and subsequent steps.
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
                 owner: BAP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Holds pledge requirements the BAP supplies during select; values are anchored in session and reused by subsequent steps.
+              info: Holds pledge requirements the BAP supplies during select; values persist in session and are reused by subsequent steps.
               owner: BAP
               type: object
         _description:
-          required: false
+          required: true
           usage: ""
-          info: Legal purchase order containing the complete contract details between buyer and seller; BAP includes it in select and the value persists for downstream steps.
+          info: Legal purchase order containing complete contract details between buyer and seller; the BAP includes it in select and the value is anchored in session and reused by later steps.
           owner: BAP
           type: object
       _description:
         required: true
         usage: ""
-        info: Container for the order the BAP is selecting.
+        info: Container for the order the BAP is selecting; the platform validates this payload.
         owner: BAP
         type: object
     _description:
@@ -3195,7 +3435,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BPP
             type: object
         _description:
@@ -3312,7 +3552,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: The context carries transaction and protocol metadata from the search request; the BPP echoes it in on_search to correlate the callback with the BAP's session.
+        info: The BPP echoes the context from the search request to correlate this callback response with the BAP's session.
         owner: BPP
         type: object
     message:
@@ -3358,7 +3598,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Array of provider images included by the BPP in the on_select response, anchored in the session and reused by later steps.
+                info: Provider images returned by the BPP in on_select, persisted in session and reused across subsequent steps.
                 owner: BPP
                 type: object
               size_type:
@@ -3371,13 +3611,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; it is stored in the order payload and reused across subsequent steps.
+              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; the value is anchored in session and reused in confirm and subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BPP
             type: object
           tags:
@@ -3398,7 +3638,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: <no-enough-data>
+              info: Tags the BPP returns in on_select, anchored in session as part of the order for reuse across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -3419,7 +3659,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP returns this tag container in on_select; the BAP preserves it within the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
+                info: The BPP returns this descriptor in on_select; the BAP preserves it in the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
                 owner: BPP
                 type: object
             list:
@@ -3441,7 +3681,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The descriptor for each provider tag is returned in on_select and persists with the order for downstream steps.
+                  info: BPP returns descriptor for each provider tag in on_select, persisting with the order for downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -3454,7 +3694,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: BPP includes provider tags in on_select; the order persists in session for use in subsequent steps.
+                info: BPP includes provider tags in on_select; the order is anchored in session and reused by subsequent steps.
                 owner: BPP
                 type: object
         items:
@@ -3504,7 +3744,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. This descriptor is anchored in the order session and reused across subsequent flow steps like init and confirm.
+              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. Anchored in the session, it's reused across init and confirm.
               owner: BPP
               type: object
             code:
@@ -3531,7 +3771,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Descriptor for the xinput header, providing metadata such as name, code, and label that convey the header's purpose and context to the BPP.
                   owner: BPP
                   type: object
                 code:
@@ -3614,7 +3854,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Form container for additional input requirements specified by the BPP in on_select; BAP echoes in select and the form persists across subsequent transaction steps.
+                info: Form container for additional input requirements the BPP generates in on_select; BAP echoes it in select and the form persists across subsequent transaction steps.
                 owner: BPP
                 type: object
               id:
@@ -3657,7 +3897,7 @@ attribute_set:
                   _description:
                     required: false
                     usage: ""
-                    info: Form input container that the BPP populates in the select response; the parent order is persisted in session under action_order for the BAP to reference across confirm and later steps.
+                    info: Form input container the BPP populates in select, persisting in session under action_order for the BAP to reference in confirm and subsequent steps.
                     owner: BPP
                     type: object
                 requestTerm:
@@ -3685,13 +3925,13 @@ attribute_set:
                   _description:
                     required: false
                     usage: ""
-                    info: Container for the form data the BPP returns in on_select; this order data is anchored in the action order and reused across subsequent steps.
+                    info: Container for form data the BPP supplies in on_select; the order is anchored in session and reused in confirm, init, and update steps.
                     owner: BPP
                     type: object
                 _description:
                   required: false
                   usage: ""
-                  info: Form input container populated by BAP during select, echoed by BPP in on_select, and persisted as part of the order for use in subsequent steps.
+                  info: BAP populates this form input container during select; BPP echoes it in on_select and persists it as part of the order session for use in subsequent steps.
                   owner: BPP
                   type: object
             _description:
@@ -3747,14 +3987,14 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BPP
             type: object
           price:
             _description:
               required: false
               usage: ""
-              info: Pricing details of an item; the BPP returns this in on_select, and it persists with the order through subsequent steps.
+              info: The BPP returns pricing details in on_select; this object persists with the order throughout the session.
               owner: BPP
               type: object
             value:
@@ -3789,7 +4029,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns items.tags as part of the selected order; this container persists in the session and is reused across subsequent steps.
+              info: BPP returns item-level tags in the selected order; this container persists in session and is reused across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -3810,7 +4050,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Metadata container for item tag details that the BAP specifies during select and persists in session under 'action_order' for reuse across subsequent steps.
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -3839,7 +4079,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists through the order session for validation and confirmation.
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
                   owner: BPP
                   type: object
               value:
@@ -3852,7 +4092,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Item-level tags that BAP populates during select; values are persisted as action_order and reused across init, confirm, and subsequent steps.
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
                 owner: BPP
                 type: object
           category_ids:
@@ -3872,7 +4112,7 @@ attribute_set:
         _description:
           required: false
           usage: ""
-          info: BPP returns the order in on_select containing the complete legal contract details between buyer and seller; the order is anchored in session and reused across all subsequent steps.
+          info: BPP returns the order containing the complete legal contract details between buyer and seller; the order is anchored in session and reused across subsequent steps.
           owner: BPP
           type: object
         quote:
@@ -3901,7 +4141,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns the total quoted price in on_select. This value is anchored in the order session and reused across subsequent steps.
+              info: The BPP returns the total quoted price in on_select and persists it in the order session for subsequent steps.
               owner: BPP
               type: object
           breakup:
@@ -3958,19 +4198,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Container for the itemized price breakdown that the BPP provides in the quote breakup on on_select, anchored in session as action_order for reuse across subsequent steps.
+                info: Itemized price breakdown BPP provides in on_select, persisted as action_order in session for reuse across subsequent steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Itemized breakdown of the total quoted price. The BPP returns this in on_select and persists it in the session (as 'action_order') for retrieval by subsequent steps like on_confirm.
+              info: The BPP returns this array in on_select with the itemized breakdown of the quoted price, anchoring it in session as action_order for subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Mutually agreed quotation for this order, used in subsequent actions.
+            info: The BPP returns the mutually agreed quotation in on_select. The quote is anchored in session and reused across confirm and subsequent steps.
             owner: BPP
             type: object
           ttl:
@@ -4024,7 +4264,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP includes fulfillment descriptor in on_select response; the containing order is persisted in session as action_order for reuse in validate and subsequent steps.
+                info: The BPP includes this descriptor in fulfillment tags on on_select; the containing order is persisted as action_order for reuse in validate and subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -4046,7 +4286,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Descriptor for fulfillment terms the BPP includes in on_select; persisted as action_order and reused across downstream steps.
+                  info: Fulfillment term descriptor the BPP includes in on_select; persisted as action_order and reused across downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -4059,7 +4299,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Fulfillment tag data returned by BPP in select, persisted in session as action_order for reuse across transaction steps.
+                info: The BPP returns fulfillment tag data in on_select; the BAP persists this under session key action_order and replays it through subsequent transaction steps (confirm, status, track, etc.).
                 owner: BPP
                 type: object
             _description:
@@ -4077,7 +4317,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: "The message container at on_select carries minimal semantic signal in the evidence—the references show only structural generation (message = { order: {...} }), and the openapi and existing_leaf descriptions are generic or restatement-only. Per the container rule, I return empty."
+        info: complete message object.
         owner: BPP
         type: object
     _description:
@@ -4125,7 +4365,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BAP
             type: object
         _description:
@@ -4242,7 +4482,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: Context is the transaction metadata container—comprising demographic, addressing, interoperability, and transaction details—that the BAP establishes on the initial request. At select, the BAP includes it unchanged to ensure both parties maintain session correlation and alignment.
+        info: Context carries transaction metadata that the BAP includes unchanged at select to maintain session correlation and alignment.
         owner: BAP
         type: object
     message:
@@ -4258,7 +4498,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BAP
             type: object
         items:
@@ -4318,7 +4558,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Form container for additional input requirements specified by the BPP in on_select; BAP echoes in select and the form persists across subsequent transaction steps.
+                info: Form container for additional input requirements the BPP generates in on_select; BAP echoes it in select and the form persists across subsequent transaction steps.
                 owner: BAP
                 type: object
             _description:
@@ -4346,7 +4586,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Descriptor for the xinput header, providing metadata such as name, code, and label that convey the header's purpose and context to the BPP.
                   owner: BAP
                   type: object
               _description:
@@ -4358,7 +4598,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BAP
             type: object
           parent_item_id:
@@ -4375,10 +4615,73 @@ attribute_set:
               info: Array of category IDs that the item belongs to.
               owner: BPP
               type: array
+          tags:
+            descriptor:
+              code:
+                _description:
+                  required: false
+                  usage: PLEDGE_REQUIREMENTS
+                  info: Descriptor code for item tag classification. BAP sets on init; value anchors in session, reused and validated across subsequent steps.
+                  owner: BAP
+                  type: string
+              name:
+                _description:
+                  required: false
+                  usage: pledge requirements
+                  info: In init, BAP provides a descriptor name to classify pledge requirements on the line item; the value is anchored in the session and reused by subsequent order steps.
+                  owner: BAP
+                  type: string
+              _description:
+                required: false
+                usage: ""
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
+                owner: BAP
+                type: object
+            list:
+              descriptor:
+                code:
+                  _description:
+                    required: false
+                    usage: SCHEME_CODE
+                    info: BAP specifies a category code for item tags in init to classify requirement types such as schemes or pledges. The code persists in the order session and is validated in subsequent steps.
+                    owner: BAP
+                    type: string
+                name:
+                  _description:
+                    required: false
+                    usage: scheme_code
+                    info: Name of a pledge or collateral attribute in the credit line request. BAP declares this field identifier in init; it persists in the saved order and is referenced across select, confirm, and downstream steps.
+                    owner: BAP
+                    type: string
+                _description:
+                  required: false
+                  usage: ""
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
+                  owner: BAP
+                  type: object
+              value:
+                _description:
+                  required: false
+                  usage: "44121"
+                  info: BAP provides item tag value strings during init; the order payload carries them through select, confirm, and later steps for validation.
+                  owner: BAP
+                  type: string
+              _description:
+                required: false
+                usage: ""
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
+                owner: BAP
+                type: object
+            _description:
+              required: false
+              usage: ""
+              info: BPP returns item-level tags in the selected order; this container persists in session and is reused across subsequent steps.
+              owner: BAP
+              type: object
         _description:
           required: true
           usage: ""
-          info: Complete purchase order with all legal contract details between buyer and seller. BAP initiates on init, BPP validates in on_init.
+          info: BAP mints the complete purchase order with all legal contract details on init; BPP echoes in on_init.
           owner: BAP
           type: object
         payments:
@@ -4441,7 +4744,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Payment parameters the BAP furnishes during init, retained in session and reused across subsequent steps.
+              info: Payment parameters the BAP furnishes during init, anchored in session and reused by later steps.
               owner: BAP
               type: object
           tags:
@@ -4483,7 +4786,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the payment tag that BAP mints on init, BPP echoes in on_init, and anchors in session for subsequent reuse.
+                info: BAP mints descriptor for the payment tag on init; BPP echoes in on_init; anchors in session for reuse in later transaction steps.
                 owner: BAP
                 type: object
             list:
@@ -4505,7 +4808,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Payment tag descriptor BAP includes on init; the structure is validated and persisted for use in subsequent steps.
                   owner: BAP
                   type: object
               value:
@@ -4524,7 +4827,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Payment settlement terms the BAP specifies during order initiation, carried forward for use across subsequent interactions.
+            info: Array of payment settlement terms the BAP specifies during order initiation; the value is anchored in session and reused by later steps.
             owner: BAP
             type: object
           time:
@@ -4538,7 +4841,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: ""
+              info: BAP specifies payment time using timestamp, duration, or schedule to indicate when payment is expected and due.
               owner: BAP
               type: object
         fulfillments:
@@ -4637,7 +4940,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Descriptor metadata container that BAP structures at init; persists with order and is validated in downstream actions.
+              info: Container for descriptor metadata the BAP structures at init; persists in session for validation by the BPP in downstream actions.
               owner: BAP
               type: object
           list:
@@ -4652,7 +4955,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BAP furnishes this descriptor on init to characterize the tag; it persists as action_order and is validated across the transaction.
+                info: BAP furnishes this descriptor on init to characterize the tag; the descriptor persists as action_order and is validated across the transaction.
                 owner: BAP
                 type: object
             value:
@@ -4665,13 +4968,13 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: ""
+              info: Tags BAP includes during init; persisted with the order and reused in later steps.
               owner: BAP
               type: object
           _description:
             required: true
             usage: ""
-            info: The BAP includes the tags array in init to carry forward order attributes from the prior saved order state, persisting them through the session for reuse in subsequent steps.
+            info: BAP includes tags in init to carry forward attributes from prior saved state, persisting them through the session for reuse in subsequent steps.
             owner: BAP
             type: object
       _description:
@@ -4725,7 +5028,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BPP
             type: object
         _description:
@@ -4842,7 +5145,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: Context is the transaction metadata container—comprising demographic, addressing, interoperability, and transaction details—that the BAP establishes on the initial request. At select, the BAP includes it unchanged to ensure both parties maintain session correlation and alignment.
+        info: Context carries transaction metadata that the BAP includes unchanged at select to maintain session correlation and alignment.
         owner: BPP
         type: object
     message:
@@ -4888,7 +5191,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Array of provider images included by the BPP in the on_select response, anchored in the session and reused by later steps.
+                info: Provider images returned by the BPP in on_select, persisted in session and reused across subsequent steps.
                 owner: BPP
                 type: object
               size_type:
@@ -4901,13 +5204,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; it is stored in the order payload and reused across subsequent steps.
+              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; the value is anchored in session and reused in confirm and subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BPP
             type: object
           tags:
@@ -4928,7 +5231,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: <no-enough-data>
+              info: Tags the BPP returns in on_select, anchored in session as part of the order for reuse across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -4949,7 +5252,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP returns this tag container in on_select; the BAP preserves it within the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
+                info: The BPP returns this descriptor in on_select; the BAP preserves it in the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
                 owner: BPP
                 type: object
             list:
@@ -4971,7 +5274,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The descriptor for each provider tag is returned in on_select and persists with the order for downstream steps.
+                  info: BPP returns descriptor for each provider tag in on_select, persisting with the order for downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -4984,7 +5287,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: BPP includes provider tags in on_select; the order persists in session for use in subsequent steps.
+                info: BPP includes provider tags in on_select; the order is anchored in session and reused by subsequent steps.
                 owner: BPP
                 type: object
         items:
@@ -5034,7 +5337,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. This descriptor is anchored in the order session and reused across subsequent flow steps like init and confirm.
+              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. Anchored in the session, it's reused across init and confirm.
               owner: BPP
               type: object
             code:
@@ -5066,13 +5369,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Pricing details of an item; the BPP returns this in on_select, and it persists with the order through subsequent steps.
+              info: The BPP returns pricing details in on_select; this object persists with the order throughout the session.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BPP
             type: object
           xinput:
@@ -5086,7 +5389,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Form container for additional input requirements specified by the BPP in on_select; BAP echoes in select and the form persists across subsequent transaction steps.
+                info: Form container for additional input requirements the BPP generates in on_select; BAP echoes it in select and the form persists across subsequent transaction steps.
                 owner: BPP
                 type: object
               url:
@@ -5170,7 +5473,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Descriptor for the xinput header, providing metadata such as name, code, and label that convey the header's purpose and context to the BPP.
                   owner: BPP
                   type: object
                 code:
@@ -5250,7 +5553,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns items.tags as part of the selected order; this container persists in the session and is reused across subsequent steps.
+              info: BPP returns item-level tags in the selected order; this container persists in session and is reused across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -5271,7 +5574,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Metadata container for item tag details that the BAP specifies during select and persists in session under 'action_order' for reuse across subsequent steps.
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -5300,7 +5603,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists through the order session for validation and confirmation.
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
                   owner: BPP
                   type: object
               value:
@@ -5313,7 +5616,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Item-level tags that BAP populates during select; values are persisted as action_order and reused across init, confirm, and subsequent steps.
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
                 owner: BPP
                 type: object
           category_ids:
@@ -5349,7 +5652,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns the total quoted price in on_select. This value is anchored in the order session and reused across subsequent steps.
+              info: The BPP returns the total quoted price in on_select and persists it in the order session for subsequent steps.
               owner: BPP
               type: object
           breakup:
@@ -5406,19 +5709,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Container for the itemized price breakdown that the BPP provides in the quote breakup on on_select, anchored in session as action_order for reuse across subsequent steps.
+                info: Itemized price breakdown BPP provides in on_select, persisted as action_order in session for reuse across subsequent steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Itemized breakdown of the total quoted price. The BPP returns this in on_select and persists it in the session (as 'action_order') for retrieval by subsequent steps like on_confirm.
+              info: The BPP returns this array in on_select with the itemized breakdown of the quoted price, anchoring it in session as action_order for subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Mutually agreed quotation for this order, used in subsequent actions.
+            info: The BPP returns the mutually agreed quotation in on_select. The quote is anchored in session and reused across confirm and subsequent steps.
             owner: BPP
             type: object
           ttl:
@@ -5469,7 +5772,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Payment parameters the BAP furnishes during init, retained in session and reused across subsequent steps.
+              info: Payment parameters the BAP furnishes during init, anchored in session and reused by later steps.
               owner: BPP
               type: object
             source_bank_account_number:
@@ -5525,7 +5828,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: ""
+              info: BAP specifies payment time using timestamp, duration, or schedule to indicate when payment is expected and due.
               owner: BPP
               type: object
             label:
@@ -5545,7 +5848,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Array of settlement terms that the BPP returns in on_init. The order containing these terms is anchored in session and consumed across subsequent steps.
+            info: Settlement terms the BPP returns in on_init, anchored in session for reuse across subsequent steps.
             owner: BPP
             type: object
           status:
@@ -5608,7 +5911,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the payment tag that BAP mints on init, BPP echoes in on_init, and anchors in session for subsequent reuse.
+                info: BAP mints descriptor for the payment tag on init; BPP echoes in on_init; anchors in session for reuse in later transaction steps.
                 owner: BPP
                 type: object
             list:
@@ -5630,7 +5933,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Payment tag descriptor BAP includes on init; the structure is validated and persisted for use in subsequent steps.
                   owner: BPP
                   type: object
               value:
@@ -5658,7 +5961,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Container for cancellation fee details the BPP returns in on_init to convey the charges applicable if the order is cancelled; these terms are anchored in the session and reused across steps from on_select onward.
+              info: Container for cancellation fees the BPP returns in on_init to convey charges if the order is cancelled; anchored in session and reused from on_select onward.
               owner: BPP
               type: object
           external_ref:
@@ -5679,13 +5982,13 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: BPP returns references to cancellation terms files in init, with this container persisting in the order across the flow for reuse in subsequent steps.
+              info: BPP returns this container with cancellation term references in on_init, persisting in the order for reuse by subsequent steps via session.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: BPP returns the array of cancellation terms in on_init, echoing what was set in on_select and persisted in the order session.
+            info: Array of cancellation terms the BPP returns in on_init, echoing the BAP's select input and persisted in the order session for use in subsequent steps.
             owner: BPP
             type: object
           fulfillment_state:
@@ -5700,7 +6003,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BPP descriptor for fulfillment state in cancellation terms; generated in on_init and persisted in session for downstream reuse.
+                info: Descriptor the BPP returns in on_init that specifies fulfillment state for cancellation terms; persists in session for downstream use and validation.
                 owner: BPP
                 type: object
             _description:
@@ -5728,7 +6031,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: Container for the customer's personal identity information within each fulfillment leg. The BPP returns this in on_init, and the value is anchored in session under the order payload for reuse by subsequent steps.
+                info: The BPP returns the customer's personal identity information within each fulfillment leg in on_init, and this value is anchored in the session order payload for reuse by subsequent steps.
                 owner: BPP
                 type: object
             contact:
@@ -5749,13 +6052,13 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: <no-enough-data>
+                info: Customer contact details within each fulfillment leg, included by BPP in on_init and persisted across subsequent transaction steps.
                 owner: BPP
                 type: object
             _description:
               required: true
               usage: ""
-              info: <no-enough-data>
+              info: Customer information for this fulfillment leg, returned by the BPP in on_init as part of the order structure persisted from select.
               owner: BPP
               type: object
           id:
@@ -5798,7 +6101,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP includes fulfillment descriptor in on_select response; the containing order is persisted in session as action_order for reuse in validate and subsequent steps.
+                info: The BPP includes this descriptor in fulfillment tags on on_select; the containing order is persisted as action_order for reuse in validate and subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -5820,7 +6123,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Descriptor for fulfillment terms the BPP includes in on_select; persisted as action_order and reused across downstream steps.
+                  info: Fulfillment term descriptor the BPP includes in on_select; persisted as action_order and reused across downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -5833,7 +6136,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Fulfillment tag data returned by BPP in select, persisted in session as action_order for reuse across transaction steps.
+                info: The BPP returns fulfillment tag data in on_select; the BAP persists this under session key action_order and replays it through subsequent transaction steps (confirm, status, track, etc.).
                 owner: BPP
                 type: object
             _description:
@@ -5854,19 +6157,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the fulfillment state that BPP returns in on_init; persists as part of action_order and is consumed by all downstream steps.
+                info: Fulfillment state descriptor BPP returns in on_init; persists as part of action_order and consumed by downstream steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Container for a fulfillment leg's state, provided by the BPP in on_init and persisted in the order for use by downstream steps.
+              info: Container for fulfillment leg state from the BPP in on_init, persisted in the order for downstream steps.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: Fulfillment plans the BPP returns in on_init describing how the order will be executed, persisted in session and consumed by later steps.
+            info: The BPP returns fulfillment plans in on_init describing how the order will be executed, persisted in session for consumption by subsequent steps.
             owner: BPP
             type: object
         tags:
@@ -5895,7 +6198,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Descriptor metadata container that BAP structures at init; persists with order and is validated in downstream actions.
+              info: Container for descriptor metadata the BAP structures at init; persists in session for validation by the BPP in downstream actions.
               owner: BPP
               type: object
           list:
@@ -5910,7 +6213,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BAP furnishes this descriptor on init to characterize the tag; it persists as action_order and is validated across the transaction.
+                info: BAP furnishes this descriptor on init to characterize the tag; the descriptor persists as action_order and is validated across the transaction.
                 owner: BPP
                 type: object
             value:
@@ -5923,7 +6226,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: ""
+              info: Tags BAP includes during init; persisted with the order and reused in later steps.
               owner: BPP
               type: object
           _description:
@@ -5980,7 +6283,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BAP
             type: object
         _description:
@@ -6073,7 +6376,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: Context is the transaction metadata container—comprising demographic, addressing, interoperability, and transaction details—that the BAP establishes on the initial request. At select, the BAP includes it unchanged to ensure both parties maintain session correlation and alignment.
+        info: Context carries transaction metadata that the BAP includes unchanged at select to maintain session correlation and alignment.
         owner: BAP
         type: object
     message:
@@ -6089,7 +6392,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BAP
             type: object
         items:
@@ -6161,7 +6464,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BAP
             type: object
           parent_item_id:
@@ -6171,10 +6474,73 @@ attribute_set:
               info: Unique item id of the parent item
               owner: BAP
               type: string
+          tags:
+            descriptor:
+              code:
+                _description:
+                  required: false
+                  usage: PLEDGE_REQUIREMENTS
+                  info: Descriptor code for item tag classification. BAP sets on init; value anchors in session, reused and validated across subsequent steps.
+                  owner: BAP
+                  type: string
+              name:
+                _description:
+                  required: false
+                  usage: pledge requirements
+                  info: In init, BAP provides a descriptor name to classify pledge requirements on the line item; the value is anchored in the session and reused by subsequent order steps.
+                  owner: BAP
+                  type: string
+              _description:
+                required: false
+                usage: ""
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
+                owner: BAP
+                type: object
+            list:
+              descriptor:
+                code:
+                  _description:
+                    required: false
+                    usage: SCHEME_CODE
+                    info: BAP specifies a category code for item tags in init to classify requirement types such as schemes or pledges. The code persists in the order session and is validated in subsequent steps.
+                    owner: BAP
+                    type: string
+                name:
+                  _description:
+                    required: false
+                    usage: scheme_code
+                    info: Name of a pledge or collateral attribute in the credit line request. BAP declares this field identifier in init; it persists in the saved order and is referenced across select, confirm, and downstream steps.
+                    owner: BAP
+                    type: string
+                _description:
+                  required: false
+                  usage: ""
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
+                  owner: BAP
+                  type: object
+              value:
+                _description:
+                  required: false
+                  usage: "44121"
+                  info: BAP provides item tag value strings during init; the order payload carries them through select, confirm, and later steps for validation.
+                  owner: BAP
+                  type: string
+              _description:
+                required: false
+                usage: ""
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
+                owner: BAP
+                type: object
+            _description:
+              required: false
+              usage: ""
+              info: BPP returns item-level tags in the selected order; this container persists in session and is reused across subsequent steps.
+              owner: BAP
+              type: object
         _description:
           required: true
           usage: ""
-          info: Complete purchase order with all legal contract details between buyer and seller. BAP initiates on init, BPP validates in on_init.
+          info: BAP mints the complete purchase order with all legal contract details on init; BPP echoes in on_init.
           owner: BAP
           type: object
         payments:
@@ -6237,13 +6603,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Payment parameters the BAP furnishes during init, retained in session and reused across subsequent steps.
+              info: Payment parameters the BAP furnishes during init, anchored in session and reused by later steps.
               owner: BAP
               type: object
           _description:
             required: false
             usage: ""
-            info: Array of settlement terms that the BPP returns in on_init. The order containing these terms is anchored in session and consumed across subsequent steps.
+            info: Settlement terms the BPP returns in on_init, anchored in session for reuse across subsequent steps.
             owner: BAP
             type: object
           time:
@@ -6257,7 +6623,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: ""
+              info: BAP specifies payment time using timestamp, duration, or schedule to indicate when payment is expected and due.
               owner: BAP
               type: object
           tags:
@@ -6279,7 +6645,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the payment tag that BAP mints on init, BPP echoes in on_init, and anchors in session for subsequent reuse.
+                info: BAP mints descriptor for the payment tag on init; BPP echoes in on_init; anchors in session for reuse in later transaction steps.
                 owner: BAP
                 type: object
             list:
@@ -6301,7 +6667,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Payment tag descriptor BAP includes on init; the structure is validated and persisted for use in subsequent steps.
                   owner: BAP
                   type: object
               value:
@@ -6349,7 +6715,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Descriptor metadata container that BAP structures at init; persists with order and is validated in downstream actions.
+              info: Container for descriptor metadata the BAP structures at init; persists in session for validation by the BPP in downstream actions.
               owner: BAP
               type: object
           list:
@@ -6364,7 +6730,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BAP furnishes this descriptor on init to characterize the tag; it persists as action_order and is validated across the transaction.
+                info: BAP furnishes this descriptor on init to characterize the tag; the descriptor persists as action_order and is validated across the transaction.
                 owner: BAP
                 type: object
             value:
@@ -6377,13 +6743,13 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: ""
+              info: Tags BAP includes during init; persisted with the order and reused in later steps.
               owner: BAP
               type: object
           _description:
             required: true
             usage: ""
-            info: The BAP includes the tags array in init to carry forward order attributes from the prior saved order state, persisting them through the session for reuse in subsequent steps.
+            info: BAP includes tags in init to carry forward attributes from prior saved state, persisting them through the session for reuse in subsequent steps.
             owner: BAP
             type: object
         fulfillments:
@@ -6448,7 +6814,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BPP
             type: object
         _description:
@@ -6541,7 +6907,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: Context is the transaction metadata container—comprising demographic, addressing, interoperability, and transaction details—that the BAP establishes on the initial request. At select, the BAP includes it unchanged to ensure both parties maintain session correlation and alignment.
+        info: Context carries transaction metadata that the BAP includes unchanged at select to maintain session correlation and alignment.
         owner: BPP
         type: object
     message:
@@ -6587,7 +6953,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Array of provider images included by the BPP in the on_select response, anchored in the session and reused by later steps.
+                info: Provider images returned by the BPP in on_select, persisted in session and reused across subsequent steps.
                 owner: BPP
                 type: object
               size_type:
@@ -6600,13 +6966,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; it is stored in the order payload and reused across subsequent steps.
+              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; the value is anchored in session and reused in confirm and subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BPP
             type: object
           tags:
@@ -6627,7 +6993,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: <no-enough-data>
+              info: Tags the BPP returns in on_select, anchored in session as part of the order for reuse across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -6648,7 +7014,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP returns this tag container in on_select; the BAP preserves it within the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
+                info: The BPP returns this descriptor in on_select; the BAP preserves it in the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
                 owner: BPP
                 type: object
             list:
@@ -6670,7 +7036,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The descriptor for each provider tag is returned in on_select and persists with the order for downstream steps.
+                  info: BPP returns descriptor for each provider tag in on_select, persisting with the order for downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -6683,7 +7049,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: BPP includes provider tags in on_select; the order persists in session for use in subsequent steps.
+                info: BPP includes provider tags in on_select; the order is anchored in session and reused by subsequent steps.
                 owner: BPP
                 type: object
         id:
@@ -6740,7 +7106,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. This descriptor is anchored in the order session and reused across subsequent flow steps like init and confirm.
+              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. Anchored in the session, it's reused across init and confirm.
               owner: BPP
               type: object
             code:
@@ -6772,13 +7138,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Pricing details of an item; the BPP returns this in on_select, and it persists with the order through subsequent steps.
+              info: The BPP returns pricing details in on_select; this object persists with the order throughout the session.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BPP
             type: object
           parent_item_id:
@@ -6806,7 +7172,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns items.tags as part of the selected order; this container persists in the session and is reused across subsequent steps.
+              info: BPP returns item-level tags in the selected order; this container persists in session and is reused across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -6827,7 +7193,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Metadata container for item tag details that the BAP specifies during select and persists in session under 'action_order' for reuse across subsequent steps.
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -6856,7 +7222,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists through the order session for validation and confirmation.
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
                   owner: BPP
                   type: object
               value:
@@ -6869,7 +7235,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Item-level tags that BAP populates during select; values are persisted as action_order and reused across init, confirm, and subsequent steps.
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
                 owner: BPP
                 type: object
           category_ids:
@@ -6905,7 +7271,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns the total quoted price in on_select. This value is anchored in the order session and reused across subsequent steps.
+              info: The BPP returns the total quoted price in on_select and persists it in the order session for subsequent steps.
               owner: BPP
               type: object
           breakup:
@@ -6962,19 +7328,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Container for the itemized price breakdown that the BPP provides in the quote breakup on on_select, anchored in session as action_order for reuse across subsequent steps.
+                info: Itemized price breakdown BPP provides in on_select, persisted as action_order in session for reuse across subsequent steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Itemized breakdown of the total quoted price. The BPP returns this in on_select and persists it in the session (as 'action_order') for retrieval by subsequent steps like on_confirm.
+              info: The BPP returns this array in on_select with the itemized breakdown of the quoted price, anchoring it in session as action_order for subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Mutually agreed quotation for this order, used in subsequent actions.
+            info: The BPP returns the mutually agreed quotation in on_select. The quote is anchored in session and reused across confirm and subsequent steps.
             owner: BPP
             type: object
           ttl:
@@ -7036,7 +7402,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Payment parameters the BAP furnishes during init, retained in session and reused across subsequent steps.
+              info: Payment parameters the BAP furnishes during init, anchored in session and reused by later steps.
               owner: BPP
               type: object
             bank_account_number:
@@ -7078,7 +7444,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: ""
+              info: BAP specifies payment time using timestamp, duration, or schedule to indicate when payment is expected and due.
               owner: BPP
               type: object
             label:
@@ -7111,7 +7477,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Array of settlement terms that the BPP returns in on_init. The order containing these terms is anchored in session and consumed across subsequent steps.
+            info: Settlement terms the BPP returns in on_init, anchored in session for reuse across subsequent steps.
             owner: BPP
             type: object
           status:
@@ -7194,7 +7560,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the payment tag that BAP mints on init, BPP echoes in on_init, and anchors in session for subsequent reuse.
+                info: BAP mints descriptor for the payment tag on init; BPP echoes in on_init; anchors in session for reuse in later transaction steps.
                 owner: BPP
                 type: object
             list:
@@ -7216,7 +7582,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Payment tag descriptor BAP includes on init; the structure is validated and persisted for use in subsequent steps.
                   owner: BPP
                   type: object
               value:
@@ -7244,7 +7610,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Container for cancellation fee details the BPP returns in on_init to convey the charges applicable if the order is cancelled; these terms are anchored in the session and reused across steps from on_select onward.
+              info: Container for cancellation fees the BPP returns in on_init to convey charges if the order is cancelled; anchored in session and reused from on_select onward.
               owner: BPP
               type: object
           external_ref:
@@ -7265,13 +7631,13 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: BPP returns references to cancellation terms files in init, with this container persisting in the order across the flow for reuse in subsequent steps.
+              info: BPP returns this container with cancellation term references in on_init, persisting in the order for reuse by subsequent steps via session.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: BPP returns the array of cancellation terms in on_init, echoing what was set in on_select and persisted in the order session.
+            info: Array of cancellation terms the BPP returns in on_init, echoing the BAP's select input and persisted in the order session for use in subsequent steps.
             owner: BPP
             type: object
           fulfillment_state:
@@ -7288,7 +7654,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BPP descriptor for fulfillment state in cancellation terms; generated in on_init and persisted in session for downstream reuse.
+                info: Descriptor the BPP returns in on_init that specifies fulfillment state for cancellation terms; persists in session for downstream use and validation.
                 owner: BPP
                 type: object
             _description:
@@ -7336,7 +7702,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Document descriptor echoed from on_select order, persisted in session to track documents through confirm and beyond.
+              info: BPP echoes the descriptor from on_select, anchored in the session order ('action_order') and reused across confirm and subsequent steps.
               owner: BPP
               type: object
           mime_type:
@@ -7356,7 +7722,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BPP returns the array of documents associated with the order in the confirm response, sourcing them from the session state established during on_select.
+            info: BPP returns the documents sourced from on_select's session state, persisting them across subsequent order operations.
             owner: BPP
             type: object
         status:
@@ -7386,7 +7752,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: Container for the customer's personal identity information within each fulfillment leg. The BPP returns this in on_init, and the value is anchored in session under the order payload for reuse by subsequent steps.
+                info: The BPP returns the customer's personal identity information within each fulfillment leg in on_init, and this value is anchored in the session order payload for reuse by subsequent steps.
                 owner: BPP
                 type: object
             contact:
@@ -7407,13 +7773,13 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: <no-enough-data>
+                info: Customer contact details within each fulfillment leg, included by BPP in on_init and persisted across subsequent transaction steps.
                 owner: BPP
                 type: object
             _description:
               required: true
               usage: ""
-              info: <no-enough-data>
+              info: Customer information for this fulfillment leg, returned by the BPP in on_init as part of the order structure persisted from select.
               owner: BPP
               type: object
           id:
@@ -7449,7 +7815,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP includes fulfillment descriptor in on_select response; the containing order is persisted in session as action_order for reuse in validate and subsequent steps.
+                info: The BPP includes this descriptor in fulfillment tags on on_select; the containing order is persisted as action_order for reuse in validate and subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -7471,7 +7837,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Descriptor for fulfillment terms the BPP includes in on_select; persisted as action_order and reused across downstream steps.
+                  info: Fulfillment term descriptor the BPP includes in on_select; persisted as action_order and reused across downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -7484,7 +7850,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Fulfillment tag data returned by BPP in select, persisted in session as action_order for reuse across transaction steps.
+                info: The BPP returns fulfillment tag data in on_select; the BAP persists this under session key action_order and replays it through subsequent transaction steps (confirm, status, track, etc.).
                 owner: BPP
                 type: object
             _description:
@@ -7505,19 +7871,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the fulfillment state that BPP returns in on_init; persists as part of action_order and is consumed by all downstream steps.
+                info: Fulfillment state descriptor BPP returns in on_init; persists as part of action_order and consumed by downstream steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Container for a fulfillment leg's state, provided by the BPP in on_init and persisted in the order for use by downstream steps.
+              info: Container for fulfillment leg state from the BPP in on_init, persisted in the order for downstream steps.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: Array of fulfillment plans the BPP returns in on_status to track order completion across delivery and service legs. Originating from the saved order state captured in on_select and session-anchored, these fulfillments persist across all subsequent status inquiries.
+            info: BPP returns the fulfillment plans from the order captured in on_select; they persist unchanged in each on_status response to track completion across delivery and service legs.
             owner: BPP
             type: object
         tags:
@@ -7546,7 +7912,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Descriptor metadata container that BAP structures at init; persists with order and is validated in downstream actions.
+              info: Container for descriptor metadata the BAP structures at init; persists in session for validation by the BPP in downstream actions.
               owner: BPP
               type: object
           list:
@@ -7561,7 +7927,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BAP furnishes this descriptor on init to characterize the tag; it persists as action_order and is validated across the transaction.
+                info: BAP furnishes this descriptor on init to characterize the tag; the descriptor persists as action_order and is validated across the transaction.
                 owner: BPP
                 type: object
             value:
@@ -7574,7 +7940,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: ""
+              info: Tags BAP includes during init; persisted with the order and reused in later steps.
               owner: BPP
               type: object
           _description:
@@ -7804,7 +8170,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BPP
             type: object
         _description:
@@ -7897,7 +8263,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: Context is the transaction metadata container—comprising demographic, addressing, interoperability, and transaction details—that the BAP establishes on the initial request. At select, the BAP includes it unchanged to ensure both parties maintain session correlation and alignment.
+        info: Context carries transaction metadata that the BAP includes unchanged at select to maintain session correlation and alignment.
         owner: BPP
         type: object
     message:
@@ -7943,7 +8309,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Array of provider images included by the BPP in the on_select response, anchored in the session and reused by later steps.
+                info: Provider images returned by the BPP in on_select, persisted in session and reused across subsequent steps.
                 owner: BPP
                 type: object
               size_type:
@@ -7956,13 +8322,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; it is stored in the order payload and reused across subsequent steps.
+              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; the value is anchored in session and reused in confirm and subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BPP
             type: object
           tags:
@@ -7983,7 +8349,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: <no-enough-data>
+              info: Tags the BPP returns in on_select, anchored in session as part of the order for reuse across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -8004,7 +8370,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP returns this tag container in on_select; the BAP preserves it within the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
+                info: The BPP returns this descriptor in on_select; the BAP preserves it in the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
                 owner: BPP
                 type: object
             list:
@@ -8026,7 +8392,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The descriptor for each provider tag is returned in on_select and persists with the order for downstream steps.
+                  info: BPP returns descriptor for each provider tag in on_select, persisting with the order for downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -8039,7 +8405,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: BPP includes provider tags in on_select; the order persists in session for use in subsequent steps.
+                info: BPP includes provider tags in on_select; the order is anchored in session and reused by subsequent steps.
                 owner: BPP
                 type: object
         items:
@@ -8089,7 +8455,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. This descriptor is anchored in the order session and reused across subsequent flow steps like init and confirm.
+              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. Anchored in the session, it's reused across init and confirm.
               owner: BPP
               type: object
             code:
@@ -8121,13 +8487,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Pricing details of an item; the BPP returns this in on_select, and it persists with the order through subsequent steps.
+              info: The BPP returns pricing details in on_select; this object persists with the order throughout the session.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BPP
             type: object
           xinput:
@@ -8185,7 +8551,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Form container for additional input requirements specified by the BPP in on_select; BAP echoes in select and the form persists across subsequent transaction steps.
+                info: Form container for additional input requirements the BPP generates in on_select; BAP echoes it in select and the form persists across subsequent transaction steps.
                 owner: BPP
                 type: object
           parent_item_id:
@@ -8213,7 +8579,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns items.tags as part of the selected order; this container persists in the session and is reused across subsequent steps.
+              info: BPP returns item-level tags in the selected order; this container persists in session and is reused across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -8234,7 +8600,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Metadata container for item tag details that the BAP specifies during select and persists in session under 'action_order' for reuse across subsequent steps.
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -8263,7 +8629,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists through the order session for validation and confirmation.
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
                   owner: BPP
                   type: object
               value:
@@ -8276,7 +8642,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Item-level tags that BAP populates during select; values are persisted as action_order and reused across init, confirm, and subsequent steps.
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
                 owner: BPP
                 type: object
           category_ids:
@@ -8312,7 +8678,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns the total quoted price in on_select. This value is anchored in the order session and reused across subsequent steps.
+              info: The BPP returns the total quoted price in on_select and persists it in the order session for subsequent steps.
               owner: BPP
               type: object
           breakup:
@@ -8369,19 +8735,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Container for the itemized price breakdown that the BPP provides in the quote breakup on on_select, anchored in session as action_order for reuse across subsequent steps.
+                info: Itemized price breakdown BPP provides in on_select, persisted as action_order in session for reuse across subsequent steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Itemized breakdown of the total quoted price. The BPP returns this in on_select and persists it in the session (as 'action_order') for retrieval by subsequent steps like on_confirm.
+              info: The BPP returns this array in on_select with the itemized breakdown of the quoted price, anchoring it in session as action_order for subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Mutually agreed quotation for this order, used in subsequent actions.
+            info: The BPP returns the mutually agreed quotation in on_select. The quote is anchored in session and reused across confirm and subsequent steps.
             owner: BPP
             type: object
           ttl:
@@ -8411,7 +8777,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: <no-enough-data>
+                info: Customer contact details within each fulfillment leg, included by BPP in on_init and persisted across subsequent transaction steps.
                 owner: BPP
                 type: object
             person:
@@ -8425,19 +8791,19 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: Container for the customer's personal identity information within each fulfillment leg. The BPP returns this in on_init, and the value is anchored in session under the order payload for reuse by subsequent steps.
+                info: The BPP returns the customer's personal identity information within each fulfillment leg in on_init, and this value is anchored in the session order payload for reuse by subsequent steps.
                 owner: BPP
                 type: object
             _description:
               required: true
               usage: ""
-              info: <no-enough-data>
+              info: Customer information for this fulfillment leg, returned by the BPP in on_init as part of the order structure persisted from select.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: Array of fulfillment plans the BPP returns in on_status to track order completion across delivery and service legs. Originating from the saved order state captured in on_select and session-anchored, these fulfillments persist across all subsequent status inquiries.
+            info: BPP returns the fulfillment plans from the order captured in on_select; they persist unchanged in each on_status response to track completion across delivery and service legs.
             owner: BPP
             type: object
           state:
@@ -8498,13 +8864,13 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the fulfillment state that BPP returns in on_init; persists as part of action_order and is consumed by all downstream steps.
+                info: Fulfillment state descriptor BPP returns in on_init; persists as part of action_order and consumed by downstream steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Container for a fulfillment leg's state, provided by the BPP in on_init and persisted in the order for use by downstream steps.
+              info: Container for fulfillment leg state from the BPP in on_init, persisted in the order for downstream steps.
               owner: BPP
               type: object
           type:
@@ -8557,7 +8923,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP includes fulfillment descriptor in on_select response; the containing order is persisted in session as action_order for reuse in validate and subsequent steps.
+                info: The BPP includes this descriptor in fulfillment tags on on_select; the containing order is persisted as action_order for reuse in validate and subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -8579,7 +8945,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Descriptor for fulfillment terms the BPP includes in on_select; persisted as action_order and reused across downstream steps.
+                  info: Fulfillment term descriptor the BPP includes in on_select; persisted as action_order and reused across downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -8592,7 +8958,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Fulfillment tag data returned by BPP in select, persisted in session as action_order for reuse across transaction steps.
+                info: The BPP returns fulfillment tag data in on_select; the BAP persists this under session key action_order and replays it through subsequent transaction steps (confirm, status, track, etc.).
                 owner: BPP
                 type: object
             _description:
@@ -8653,7 +9019,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Payment parameters the BAP furnishes during init, retained in session and reused across subsequent steps.
+              info: Payment parameters the BAP furnishes during init, anchored in session and reused by later steps.
               owner: BPP
               type: object
             bank_code:
@@ -8709,7 +9075,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: ""
+              info: BAP specifies payment time using timestamp, duration, or schedule to indicate when payment is expected and due.
               owner: BPP
               type: object
             label:
@@ -8742,7 +9108,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Array of settlement terms that the BPP returns in on_init. The order containing these terms is anchored in session and consumed across subsequent steps.
+            info: Settlement terms the BPP returns in on_init, anchored in session for reuse across subsequent steps.
             owner: BPP
             type: object
           status:
@@ -8825,7 +9191,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the payment tag that BAP mints on init, BPP echoes in on_init, and anchors in session for subsequent reuse.
+                info: BAP mints descriptor for the payment tag on init; BPP echoes in on_init; anchors in session for reuse in later transaction steps.
                 owner: BPP
                 type: object
             list:
@@ -8847,7 +9213,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Payment tag descriptor BAP includes on init; the structure is validated and persisted for use in subsequent steps.
                   owner: BPP
                   type: object
               value:
@@ -8873,14 +9239,14 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BPP returns the array of cancellation terms in on_init, echoing what was set in on_select and persisted in the order session.
+            info: Array of cancellation terms the BPP returns in on_init, echoing the BAP's select input and persisted in the order session for use in subsequent steps.
             owner: BPP
             type: object
           cancellation_fee:
             _description:
               required: true
               usage: ""
-              info: Container for cancellation fee details the BPP returns in on_init to convey the charges applicable if the order is cancelled; these terms are anchored in the session and reused across steps from on_select onward.
+              info: Container for cancellation fees the BPP returns in on_init to convey charges if the order is cancelled; anchored in session and reused from on_select onward.
               owner: BPP
               type: object
             percentage:
@@ -8894,7 +9260,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: BPP returns references to cancellation terms files in init, with this container persisting in the order across the flow for reuse in subsequent steps.
+              info: BPP returns this container with cancellation term references in on_init, persisting in the order for reuse by subsequent steps via session.
               owner: BPP
               type: object
             mimetype:
@@ -8925,7 +9291,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BPP descriptor for fulfillment state in cancellation terms; generated in on_init and persisted in session for downstream reuse.
+                info: Descriptor the BPP returns in on_init that specifies fulfillment state for cancellation terms; persists in session for downstream use and validation.
                 owner: BPP
                 type: object
             _description:
@@ -9023,7 +9389,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Descriptor metadata container that BAP structures at init; persists with order and is validated in downstream actions.
+              info: Container for descriptor metadata the BAP structures at init; persists in session for validation by the BPP in downstream actions.
               owner: BPP
               type: object
           list:
@@ -9038,7 +9404,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BAP furnishes this descriptor on init to characterize the tag; it persists as action_order and is validated across the transaction.
+                info: BAP furnishes this descriptor on init to characterize the tag; the descriptor persists as action_order and is validated across the transaction.
                 owner: BPP
                 type: object
             value:
@@ -9051,7 +9417,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: ""
+              info: Tags BAP includes during init; persisted with the order and reused in later steps.
               owner: BPP
               type: object
           _description:
@@ -9678,7 +10044,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BAP specifies the city location where the transaction is meant to be completed.
+            info: The city location the BAP specifies to narrow the search to a particular geographic area.
             owner: BPP
             type: object
         _description:
@@ -9771,7 +10137,7 @@ attribute_set:
       _description:
         required: true
         usage: ""
-        info: Context is the transaction metadata container—comprising demographic, addressing, interoperability, and transaction details—that the BAP establishes on the initial request. At select, the BAP includes it unchanged to ensure both parties maintain session correlation and alignment.
+        info: Context carries transaction metadata that the BAP includes unchanged at select to maintain session correlation and alignment.
         owner: BPP
         type: object
     message:
@@ -9824,7 +10190,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Array of provider images included by the BPP in the on_select response, anchored in the session and reused by later steps.
+                info: Provider images returned by the BPP in on_select, persisted in session and reused across subsequent steps.
                 owner: BPP
                 type: object
               size_type:
@@ -9837,13 +10203,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; it is stored in the order payload and reused across subsequent steps.
+              info: The BPP returns this descriptor in on_select to identify the financial institution offering the loan; the value is anchored in session and reused in confirm and subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: BAP specifies the provider whose catalog items it is selecting on select; BPP echoes the provider details in on_select.
+            info: BAP specifies the provider whose items are being selected; the provider persists in session and BPP echoes it in on_select.
             owner: BPP
             type: object
           tags:
@@ -9864,7 +10230,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: <no-enough-data>
+              info: Tags the BPP returns in on_select, anchored in session as part of the order for reuse across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -9885,7 +10251,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP returns this tag container in on_select; the BAP preserves it within the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
+                info: The BPP returns this descriptor in on_select; the BAP preserves it in the order payload and carries it forward (keyed as action_order) across validate and confirm steps.
                 owner: BPP
                 type: object
             list:
@@ -9907,7 +10273,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The descriptor for each provider tag is returned in on_select and persists with the order for downstream steps.
+                  info: BPP returns descriptor for each provider tag in on_select, persisting with the order for downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -9920,7 +10286,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: BPP includes provider tags in on_select; the order persists in session for use in subsequent steps.
+                info: BPP includes provider tags in on_select; the order is anchored in session and reused by subsequent steps.
                 owner: BPP
                 type: object
           fulfillments:
@@ -10005,7 +10371,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. This descriptor is anchored in the order session and reused across subsequent flow steps like init and confirm.
+              info: BPP returns the product or service descriptor in on_select, capturing distinctive features and benefits. Anchored in the session, it's reused across init and confirm.
               owner: BPP
               type: object
             code:
@@ -10033,13 +10399,13 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Pricing details of an item; the BPP returns this in on_select, and it persists with the order through subsequent steps.
+              info: The BPP returns pricing details in on_select; this object persists with the order throughout the session.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects (products and services being availed); the BPP echoes in on_select and anchors them as action_order for reuse across subsequent steps.
+            info: Products and services the BAP selects in select; the BPP echoes in on_select and anchors them in the order session for reuse in subsequent steps.
             owner: BPP
             type: object
           parent_item_id:
@@ -10067,7 +10433,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns items.tags as part of the selected order; this container persists in the session and is reused across subsequent steps.
+              info: BPP returns item-level tags in the selected order; this container persists in session and is reused across subsequent steps.
               owner: BPP
               type: object
             descriptor:
@@ -10088,7 +10454,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Metadata container for item tag details that the BAP specifies during select and persists in session under 'action_order' for reuse across subsequent steps.
+                info: Item tag metadata BAP specifies on select; BPP echoes in on_select and persists as action_order for subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -10117,7 +10483,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists through the order session for validation and confirmation.
+                  info: The BAP specifies this descriptor to identify the chosen term or offer; it persists in the order session and is echoed by the BPP in on_select.
                   owner: BPP
                   type: object
               value:
@@ -10130,7 +10496,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Item-level tags that BAP populates during select; values are persisted as action_order and reused across init, confirm, and subsequent steps.
+                info: BAP populates item-level tags during select that persist as action_order and are reused across init, confirm, and subsequent steps.
                 owner: BPP
                 type: object
           category_ids:
@@ -10166,7 +10532,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: The BPP returns the total quoted price in on_select. This value is anchored in the order session and reused across subsequent steps.
+              info: The BPP returns the total quoted price in on_select and persists it in the order session for subsequent steps.
               owner: BPP
               type: object
           breakup:
@@ -10195,19 +10561,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Container for the itemized price breakdown that the BPP provides in the quote breakup on on_select, anchored in session as action_order for reuse across subsequent steps.
+                info: Itemized price breakdown BPP provides in on_select, persisted as action_order in session for reuse across subsequent steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Itemized breakdown of the total quoted price. The BPP returns this in on_select and persists it in the session (as 'action_order') for retrieval by subsequent steps like on_confirm.
+              info: The BPP returns this array in on_select with the itemized breakdown of the quoted price, anchoring it in session as action_order for subsequent steps.
               owner: BPP
               type: object
           _description:
             required: false
             usage: ""
-            info: Mutually agreed quotation for this order, used in subsequent actions.
+            info: The BPP returns the mutually agreed quotation in on_select. The quote is anchored in session and reused across confirm and subsequent steps.
             owner: BPP
             type: object
           ttl:
@@ -10269,7 +10635,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Payment parameters the BAP furnishes during init, retained in session and reused across subsequent steps.
+              info: Payment parameters the BAP furnishes during init, anchored in session and reused by later steps.
               owner: BPP
               type: object
             bank_account_number:
@@ -10311,7 +10677,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: ""
+              info: BAP specifies payment time using timestamp, duration, or schedule to indicate when payment is expected and due.
               owner: BPP
               type: object
             label:
@@ -10344,7 +10710,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Array of settlement terms that the BPP returns in on_init. The order containing these terms is anchored in session and consumed across subsequent steps.
+            info: Settlement terms the BPP returns in on_init, anchored in session for reuse across subsequent steps.
             owner: BPP
             type: object
           status:
@@ -10427,7 +10793,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the payment tag that BAP mints on init, BPP echoes in on_init, and anchors in session for subsequent reuse.
+                info: BAP mints descriptor for the payment tag on init; BPP echoes in on_init; anchors in session for reuse in later transaction steps.
                 owner: BPP
                 type: object
             list:
@@ -10449,7 +10815,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: <no-enough-data>
+                  info: Payment tag descriptor BAP includes on init; the structure is validated and persisted for use in subsequent steps.
                   owner: BPP
                   type: object
               value:
@@ -10477,7 +10843,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Container for cancellation fee details the BPP returns in on_init to convey the charges applicable if the order is cancelled; these terms are anchored in the session and reused across steps from on_select onward.
+              info: Container for cancellation fees the BPP returns in on_init to convey charges if the order is cancelled; anchored in session and reused from on_select onward.
               owner: BPP
               type: object
           external_ref:
@@ -10498,13 +10864,13 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: BPP returns references to cancellation terms files in init, with this container persisting in the order across the flow for reuse in subsequent steps.
+              info: BPP returns this container with cancellation term references in on_init, persisting in the order for reuse by subsequent steps via session.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: BPP returns the array of cancellation terms in on_init, echoing what was set in on_select and persisted in the order session.
+            info: Array of cancellation terms the BPP returns in on_init, echoing the BAP's select input and persisted in the order session for use in subsequent steps.
             owner: BPP
             type: object
           fulfillment_state:
@@ -10521,7 +10887,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BPP descriptor for fulfillment state in cancellation terms; generated in on_init and persisted in session for downstream reuse.
+                info: Descriptor the BPP returns in on_init that specifies fulfillment state for cancellation terms; persists in session for downstream use and validation.
                 owner: BPP
                 type: object
             _description:
@@ -10569,7 +10935,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Document descriptor echoed from on_select order, persisted in session to track documents through confirm and beyond.
+              info: BPP echoes the descriptor from on_select, anchored in the session order ('action_order') and reused across confirm and subsequent steps.
               owner: BPP
               type: object
           mime_type:
@@ -10589,7 +10955,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BPP returns the array of documents associated with the order in the confirm response, sourcing them from the session state established during on_select.
+            info: BPP returns the documents sourced from on_select's session state, persisting them across subsequent order operations.
             owner: BPP
             type: object
         status:
@@ -10619,7 +10985,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: Container for the customer's personal identity information within each fulfillment leg. The BPP returns this in on_init, and the value is anchored in session under the order payload for reuse by subsequent steps.
+                info: The BPP returns the customer's personal identity information within each fulfillment leg in on_init, and this value is anchored in the session order payload for reuse by subsequent steps.
                 owner: BPP
                 type: object
             contact:
@@ -10640,13 +11006,13 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: <no-enough-data>
+                info: Customer contact details within each fulfillment leg, included by BPP in on_init and persisted across subsequent transaction steps.
                 owner: BPP
                 type: object
             _description:
               required: true
               usage: ""
-              info: <no-enough-data>
+              info: Customer information for this fulfillment leg, returned by the BPP in on_init as part of the order structure persisted from select.
               owner: BPP
               type: object
           id:
@@ -10682,7 +11048,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: The BPP includes fulfillment descriptor in on_select response; the containing order is persisted in session as action_order for reuse in validate and subsequent steps.
+                info: The BPP includes this descriptor in fulfillment tags on on_select; the containing order is persisted as action_order for reuse in validate and subsequent steps.
                 owner: BPP
                 type: object
             list:
@@ -10704,7 +11070,7 @@ attribute_set:
                 _description:
                   required: false
                   usage: ""
-                  info: Descriptor for fulfillment terms the BPP includes in on_select; persisted as action_order and reused across downstream steps.
+                  info: Fulfillment term descriptor the BPP includes in on_select; persisted as action_order and reused across downstream steps.
                   owner: BPP
                   type: object
               value:
@@ -10717,7 +11083,7 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Fulfillment tag data returned by BPP in select, persisted in session as action_order for reuse across transaction steps.
+                info: The BPP returns fulfillment tag data in on_select; the BAP persists this under session key action_order and replays it through subsequent transaction steps (confirm, status, track, etc.).
                 owner: BPP
                 type: object
             _description:
@@ -10738,19 +11104,19 @@ attribute_set:
               _description:
                 required: false
                 usage: ""
-                info: Descriptor for the fulfillment state that BPP returns in on_init; persists as part of action_order and is consumed by all downstream steps.
+                info: Fulfillment state descriptor BPP returns in on_init; persists as part of action_order and consumed by downstream steps.
                 owner: BPP
                 type: object
             _description:
               required: false
               usage: ""
-              info: Container for a fulfillment leg's state, provided by the BPP in on_init and persisted in the order for use by downstream steps.
+              info: Container for fulfillment leg state from the BPP in on_init, persisted in the order for downstream steps.
               owner: BPP
               type: object
           _description:
             required: true
             usage: ""
-            info: Array of fulfillment plans the BPP returns in on_status to track order completion across delivery and service legs. Originating from the saved order state captured in on_select and session-anchored, these fulfillments persist across all subsequent status inquiries.
+            info: BPP returns the fulfillment plans from the order captured in on_select; they persist unchanged in each on_status response to track completion across delivery and service legs.
             owner: BPP
             type: object
         tags:
@@ -10779,7 +11145,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: Descriptor metadata container that BAP structures at init; persists with order and is validated in downstream actions.
+              info: Container for descriptor metadata the BAP structures at init; persists in session for validation by the BPP in downstream actions.
               owner: BPP
               type: object
           list:
@@ -10794,7 +11160,7 @@ attribute_set:
               _description:
                 required: true
                 usage: ""
-                info: BAP furnishes this descriptor on init to characterize the tag; it persists as action_order and is validated across the transaction.
+                info: BAP furnishes this descriptor on init to characterize the tag; the descriptor persists as action_order and is validated across the transaction.
                 owner: BPP
                 type: object
             value:
@@ -10807,7 +11173,7 @@ attribute_set:
             _description:
               required: true
               usage: ""
-              info: ""
+              info: Tags BAP includes during init; persisted with the order and reused in later steps.
               owner: BPP
               type: object
           _description:
@@ -11169,3 +11535,11 @@ attribute_set:
       info: <placeholder description>
       owner: BAP
       type: object
+  dynamic_form:
+    idType:
+      _description:
+        required: false
+        usage: COMPLETED
+        info: The classification of identifier format used in this form field, such as phone number, email, or document ID, determining the validation rules and expected data structure.
+        owner: BAP
+        type: string
