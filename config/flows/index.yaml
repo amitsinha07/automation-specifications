@@ -327,9 +327,31 @@ flows:
       - WORKBENCH
       - REPORTABLE
       - PERSONAL LOAN
-    description: Business Loan - Term Loan with Offline & Online Journey
+    description: Business Loan Foreclosure - Term Loan with Offline & Online Journey
     config:
       $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_AA.yaml
+
+  - type: playground
+    id: business_term_loan_with_aa_missed_emi
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - PERSONAL LOAN
+    description: Business Loan Missed EMI - Term Loan with Offline & Online Journey
+    config:
+      $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_AA_Missed_EMI.yaml
+
+  - type: playground
+    id: business_term_loan_with_aa_pre_part
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - PERSONAL LOAN
+    description: Business Loan Pre-Part - Term Loan with Offline & Online Journey
+    config:
+      $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_AA_Pre_Part.yaml        
 
 
   - type: playground
@@ -386,14 +408,34 @@ flows:
       $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_Offline_Journey.yaml  
 
   - type: playground
-    id: lamf_credit_line_with_mfc
+    id: lamf_credit_line_with_mfc_foreclosure
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: LAMF - Credit Line with MFC
+    description: LAMF - Credit Line with MFC_Foreclosure
     config:
-      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC.yaml       
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC.yaml 
+
+  - type: playground
+    id: lamf_credit_line_with_mfc_missed_emi
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: LAMF - Credit Line with MFC_Missed_EMI
+    config:
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_missed_emi.yaml 
+
+  - type: playground
+    id: lamf_credit_line_with_pre_part
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: LAMF - Credit Line with MFC_Missed_EMI
+    config:
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_pre_part.yaml             
 
   - type: playground
     id: lamf_credit_line_with_rta
@@ -401,7 +443,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: LAMF - Credit Line with MFC
+    description: LAMF - Credit Line with RTA
     config:
       $ref: ./UNIFIED CREDIT/lamf_credit_line_with_rta_deployment_config.yaml       
 
