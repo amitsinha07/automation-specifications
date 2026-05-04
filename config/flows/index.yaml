@@ -7,7 +7,7 @@ flows:
       - MANDATORY
       - REPORTABLE
       - WORKBENCH
-    description: IntraCity - Purchase Journey Flow(Code Based)
+    description: Intra-city bus booking journey from ticket discovery through confirmation, followed by merchant-initiated cancellation of the confirmed reservation.
     config:
       $ref: ./Bus/IntraCity_Merchant_Side_Cancellation.yaml
   - type: playground
@@ -18,7 +18,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: IntraCity - Unlimited Passes Flow (Code Based)
+    description: Enables a commuter to discover, select, and purchase a monthly unlimited intra-city bus pass, with digital code-based access for seamless transit entry.
     config:
       $ref: ./Bus/IntraCity_Monthly_Passes_Flow_Code_Based.yaml
   - type: playground
@@ -27,7 +27,7 @@ flows:
     tags:
       - MANDATORY
       - WORKBENCH
-    description: IntraCity - Purchase Journey Flow(Code Based)
+    description: End-to-end intra-city bus ticket booking and issue management flow, from passenger search through post-purchase support and complaint resolution.
     config:
       $ref: ./Bus/IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_v-1_0_0_.yaml
   - type: playground
@@ -36,7 +36,7 @@ flows:
     tags:
       - MANDATORY
       - WORKBENCH
-    description: IntraCity - Purchase Journey Flow(Code Based)
+    description: Intra-city bus ticket purchase journey combining service discovery, selection, and booking confirmation with integrated issue and grievance management capabilities for complete customer support.
     config:
       $ref: ./Bus/IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_v-2_0_0_.yaml
   - type: playground
@@ -45,7 +45,7 @@ flows:
     tags:
       - MANDATORY
       - WORKBENCH
-    description: IntraCity - Purchase Journey Flow(Code Based)
+    description: Complete intra-city bus ticket purchase journey from service discovery and selection through order confirmation, including post-purchase issue grievance management.
     config:
       $ref: ./Bus/IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_No_Action_v-2_0_0_.yaml
   - type: playground
@@ -54,7 +54,7 @@ flows:
     tags:
       - MANDATORY
       - WORKBENCH
-    description: IntraCity - Purchase Journey Flow(Code Based)
+    description: Intra-city bus ticket purchase journey encompassing search, selection, booking confirmation, and comprehensive issue and grievance management including rejection scenarios.
     config:
       $ref: ./Bus/IntraCity_Purchase_Journey_FlowCode_Based_Flow_With_IGM_Rejection_v-2_0_0_.yaml
   - type: playground
@@ -65,7 +65,7 @@ flows:
       - MANDATORY
       - REPORTABLE
       - WORKBENCH
-    description: IntraCity - Purchase Journey Flow(Code Based)
+    description: Enables end-to-end intra-city bus ticket purchasing, from route discovery through booking confirmation and real-time order tracking.
     config:
       $ref: ./Bus/IntraCity_Purchase_Journey_Flow_Code_Based.yaml
   - type: playground
@@ -74,7 +74,7 @@ flows:
     tags:
       - WORKBENCH
       - OPTIONAL
-    description: IntraCity - Search Pagination Flow(Code Based)
+    description: A buyer searches for available bus services within a city, and the seller returns matching results in paginated responses.
     config:
       $ref: ./Bus/IntraCity_Search_Pagination_FlowCode_Based.yaml
   - type: playground
@@ -85,7 +85,7 @@ flows:
       - MANDATORY
       - REPORTABLE
       - WORKBENCH
-    description: IntraCity - Technical Cancellation Flow
+    description: Complete end-to-end transaction for intra-city bus ticket booking from search and selection through confirmation and technical cancellation processing.
     config:
       $ref: ./Bus/IntraCity_Technical_Cancellation_Flow.yaml
   - type: playground
@@ -94,7 +94,7 @@ flows:
     tags:
       - WORKBENCH
       - OPTIONAL
-    description: IntraCity - User Based Confirmation flow
+    description: End-to-end intra-city bus booking where users search for available routes, select a preferred service, and explicitly confirm their reservation before the transaction is finalized.
     config:
       $ref: ./Bus/IntraCity_User_Based_Confirmation_flow.yaml
   - type: playground
@@ -105,7 +105,7 @@ flows:
       - MANDATORY
       - REPORTABLE
       - WORKBENCH
-    description: IntraCity - User Cancellation Flow
+    description: Demonstrates user cancellation of a confirmed intra-city bus ticket through the complete booking and cancellation lifecycle. Validates the end-to-end flow from passenger search and selection through booking confirmation and final cancellation acknowledgment.
     config:
       $ref: ./Bus/IntraCity_User_Cancellation_Flow.yaml
   - type: playground
@@ -114,7 +114,7 @@ flows:
     tags:
       - WORKBENCH
       - OPTIONAL
-    description: IntraCity - Vehicle Based Confirmation flow
+    description: An intra-city bus booking flow that guides passengers through searching for services, selecting a bus, confirming their reservation, and updating booking details.
     config:
       $ref: ./Bus/IntraCity_Vehicle_Based_Confirmation_flow_With_Update_Call_.yaml
   - type: playground
@@ -123,7 +123,7 @@ flows:
     tags:
       - WORKBENCH
       - OPTIONAL
-    description: IntraCity - Vehicle Based Confirmation flow(Without Update Call)
+    description: A complete intra-city bus reservation workflow where passengers search available services, select their preferred option, and finalize their booking through confirmation.
     config:
       $ref: ./Bus/IntraCity_Vehicle_Based_Confirmation_flow_Without_Update_Call_.yaml
   - type: playground
@@ -133,7 +133,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: User searches for and selects a metro service, then initiates and confirms the booking. After the booking is accepted, the user cancels the reservation through the delayed cancellation flow.
     config:
       $ref: ./Metro/DELAYED_CANCELLATION_FLOW_ACCEPTED.yaml
   - type: playground
@@ -143,7 +143,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: A passenger searches for a metro route, confirms a ticket booking, and then successfully cancels the confirmed reservation.
     config:
       $ref: ./Metro/DELAYED_CANCELLATION_FLOW_ACCEPTED__W_O_Select_.yaml
   - type: playground
@@ -153,7 +153,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: Buyer initiates cancellation of a confirmed metro booking after selection and confirmation, but the platform rejects the cancellation request due to business rules or operational constraints.
     config:
       $ref: ./Metro/DELAYED_CANCELLATION_FLOW_REJECTED.yaml
   - type: playground
@@ -163,7 +163,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: User requests cancellation of a confirmed metro booking, but the cancellation request is delayed and ultimately rejected due to timing or business constraints.
     config:
       $ref: ./Metro/DELAYED_CANCELLATION_FLOW_REJECTED__W_O_Select_.yaml
   - type: playground
@@ -173,7 +173,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: End stop update flow
+    description: Customer searches for available metro routes, selects a preferred service to their destination, completes booking confirmation, and receives multiple journey status updates throughout the transaction lifecycle.
     config:
       $ref: ./Metro/END_STOP_UPDATE_FLOW.yaml
   - type: playground
@@ -183,7 +183,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: End stop update flow
+    description: Allows a metro passenger to search for transit routes, initiate a booking, and update their destination stop multiple times during the transaction before confirming and completing the payment, streamlining the ticket purchase flow without a separate selection confirmation step.
     config:
       $ref: ./Metro/END_STOP_UPDATE_FLOW__W_O_Select_.yaml
   - type: playground
@@ -193,7 +193,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: A commuter searches for metro stations using a station code to discover transit services and station-specific information within the network.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_CATALOG.yaml
   - type: playground
@@ -203,7 +203,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: User searches and books a metro ticket using station codes, selects their preferred service, confirms the order, and tracks order status.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER.yaml
   - type: playground
@@ -213,7 +213,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: A metro passenger searches for and books a journey between stations using station codes, proceeding directly from search discovery through booking confirmation without an intermediate service selection step.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER__W_O_Select_.yaml
   - type: playground
@@ -223,7 +223,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: Customer uses a station code to search for and purchase metro tickets, completes the order, and can file and manage grievances if issues arise during the transaction.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_v-2_0_0_.yaml
   - type: playground
@@ -233,7 +233,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: A customer books a metro ticket using station code search, confirms the booking, tracks order status, and resolves any transaction issues through the integrated grievance management process.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_v-2_0_0__W_O_Select_.yaml
   - type: playground
@@ -243,7 +243,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: Customers search and book metro journeys using station codes, with order issues automatically resolved without requiring further customer action.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-1_0_0_.yaml
   - type: playground
@@ -253,7 +253,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: A passenger searches for metro stations using station codes, confirms a ticket booking, and submits an unresolved issue to validate the issue management workflow.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-1_0_0__W_O_Select_.yaml
   - type: playground
@@ -263,7 +263,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: A customer searches and books metro tickets using station codes, then escalates service issues when the provider takes no corrective action.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-2_0_0_.yaml
   - type: playground
@@ -273,7 +273,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: End-to-end metro ticketing transaction where customers search for transit routes using station codes, complete booking and order confirmation, track shipment status, and escalate service issues through automated grievance management.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-2_0_0__W_O_Select_.yaml
   - type: playground
@@ -283,7 +283,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: Customer searches metro stations using station codes, completes a ticket booking, and navigates through the full issue resolution workflow when their complaint is rejected.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_Rejection_v-2_0_0_.yaml
   - type: playground
@@ -293,7 +293,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User uses station code for searching metro
+    description: A passenger searches for metro tickets by station code, confirms the booking, then processes an order rejection through the issue and grievance management system.
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_Rejection_v-2_0_0__W_O_Select_.yaml
   - type: playground
@@ -303,7 +303,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: A customer discovers and books a metro transportation service through ONDC, then cancels the reservation to verify the complete technical cancellation workflow from booking to transaction reversal.
     config:
       $ref: ./Metro/TECHNICAL_CANCELLATION_FLOW.yaml
   - type: playground
@@ -313,7 +313,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: A passenger searches for metro tickets, confirms a booking, and then cancels the confirmed order. The flow validates the technical cancellation workflow from ticket discovery through transaction reversal.
     config:
       $ref: ./Metro/TECHNICAL_CANCELLATION_FLOW__W_O_Select_.yaml
   - type: playground
@@ -323,7 +323,7 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: A passenger discovers and selects from available metro services, confirms a booking, and then cancels the reservation, validating the complete cancellation workflow from service discovery through successful cancellation.
     config:
       $ref: ./Metro/USER_CANCELLATION_FLOW.yaml
   - type: playground
@@ -333,6 +333,6 @@ flows:
       - WORKBENCH
       - MANDATORY
       - REPORTABLE
-    description: User cancels the metro booking
+    description: A user searches for metro services, initiates and confirms a booking, and then cancels the confirmed reservation. This flow validates the end-to-end cancellation experience for metro transit transactions on the ONDC network.
     config:
       $ref: ./Metro/USER_CANCELLATION_FLOW__W_O_Select_.yaml
