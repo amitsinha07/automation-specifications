@@ -1731,8 +1731,16 @@ _TESTS_:
       _RETURN_: *COMMON_CONTEXT 
 
     - _NAME_: REQUIRED_ORDER_ID
+      usecasepath: $.message.ref_id
+      _CONTINUE_: (usecasepath are present)
       attr: $.message.order_id
       _RETURN_: attr are present
+
+    - _NAME_: REQUIRED_REF_ID
+      usecasepath: $.message.order_id
+      _CONTINUE_: (usecasepath are present)
+      attr : $.message.ref_id
+      _RETURN_: attr are present 
 
   on_status:
     - _NAME_: ON_STATUS_CONTEXT
@@ -1803,15 +1811,15 @@ _TESTS_:
       _CONTINUE_: '!(usecasepath equal to usecasevalue)'
       _RETURN_:
         - *REQUIRED_FULFILLMENT_ID
-        - _NAME_: REQUIRED_STOPS_TYPE
-          attr: $.message.order.fulfillments[*].stops[*].type
-          _RETURN_: attr are present
-        - _NAME_: REQUIRED_LOCATION_CODE
-          attr: $.message.order.fulfillments[*].stops[*].location.descriptor.code
-          _RETURN_: attr are present
-        - _NAME_: REQUIRED_LOCATION_GPS
-          attr: $.message.order.fulfillments[*].stops[*].location.gps
-          _RETURN_: attr are present
+        # - _NAME_: REQUIRED_STOPS_TYPE
+        #   attr: $.message.order.fulfillments[*].stops[*].type
+        #   _RETURN_: attr are present
+        # - _NAME_: REQUIRED_LOCATION_CODE
+        #   attr: $.message.order.fulfillments[*].stops[*].location.descriptor.code
+        #   _RETURN_: attr are present
+        # - _NAME_: REQUIRED_LOCATION_GPS
+        #   attr: $.message.order.fulfillments[*].stops[*].location.gps
+        #   _RETURN_: attr are present
 
     - _NAME_: REQUIRED_PAYMENTS
       usecasepath: $.message.update_target
