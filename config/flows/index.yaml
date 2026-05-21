@@ -42,16 +42,43 @@ flows:
   #     $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_AA_Pre_Part.yaml        
 
 
+  # - type: playground
+  #   id: business_term_loan_with_offline_online
+  #   usecase: UNIFIED CREDIT
+  #   tags:
+  #     - WORKBENCH
+  #     - REPORTABLE
+  #     - PERSONAL LOAN
+  #   description: End-to-end personal loan origination from product discovery through multi-stage dynamic application to confirmation, supporting both online and offline channels.
+  #   config:
+  #     $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_offline_online_journey.yaml
   - type: playground
-    id: business_term_loan_with_offline_online
+    id: business_term_loan_with_offline_online_foreclosure
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
       - REPORTABLE
-      - PERSONAL LOAN
     description: End-to-end personal loan origination from product discovery through multi-stage dynamic application to confirmation, supporting both online and offline channels.
     config:
       $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_offline_online_journey.yaml
+  - type: playground
+    id: business_term_loan_with_offline_online_missed_emi
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: End-to-end personal loan origination from product discovery through multi-stage dynamic application to confirmation, supporting both online and offline channels.
+    config:
+      $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_offline_online_missed_emi.yaml
+  - type: playground
+    id: business_term_loan_with_offline_online_pre_part
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: End-to-end personal loan origination from product discovery through multi-stage dynamic application to confirmation, supporting both online and offline channels.
+    config:
+      $ref: ./UNIFIED CREDIT/Business_Term_Loan_with_offline_online_pre_part.yaml        
   # - type: playground
   #   id: business_term_loan_without_aa
   #   usecase: UNIFIED CREDIT
