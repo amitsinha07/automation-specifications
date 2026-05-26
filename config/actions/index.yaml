@@ -2,17 +2,17 @@ supportedActions:
   "null":
     - search
     - init
-  search:
-    - on_search
-  on_search:
-    - search
-    - select
-  select:
-    - on_select
-  on_select:
-    - select
-    - init
-    - on_status
+  # search:
+  #   - on_search
+  # on_search:
+  #   - search
+  #   - select
+  # select:
+  #   - on_select
+  # on_select:
+  #   - select
+  #   - init
+  #   - on_status
   init:
     - on_init
   on_init:
