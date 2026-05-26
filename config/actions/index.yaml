@@ -7,8 +7,10 @@ supportedActions:
   on_search:
     - search
     - select
+    - init
   select:
     - on_select
+    - init
   on_select:
     - select
     - init
