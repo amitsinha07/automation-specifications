@@ -162,83 +162,84 @@ flows:
   #   description: End stop update flow
   #   config:
   #     $ref: ./Metro/END_STOP_UPDATE_FLOW.yaml
-  # - type: playground
-  #   id: METRO_CARD_PURCHASE
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User uses station code for searching metro
-  #   config:
-  #     $ref: ./Metro/METRO_CARD_PURCHASE.yaml
-  # - type: playground
-  #   id: METRO_CARD_RECHARGE
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User uses station code for searching metro
-  #   config:
-  #     $ref: ./Metro/METRO_CARD_RECHARGE.yaml
-  # - type: playground
-  #   id: METRO_MASTER_SEARCH_FLOW
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User searches for metro
-  #   config:
-  #     $ref: ./Metro/METRO_MASTER_SEARCH_FLOW.yaml
-  # - type: playground
-  #   id: METRO_UNLIMITED_PASS_FLOW
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User uses station code for searching metro
-  #   config:
-  #     $ref: ./Metro/METRO_UNLIMITED_PASS_FLOW.yaml
-  # - type: playground
-  #   id: PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User uses station code for searching metro
-  #   config:
-  #     $ref: ./Metro/PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW.yaml
-  # - type: playground
-  #   id: PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW_WITH_IGM(v-1.0.0)
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User uses station code for searching metro
-  #   config:
-  #     $ref: ./Metro/PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW_WITH_IGM_v-1_0_0_.yaml
-  # - type: playground
-  #   id: TECHNICAL_CANCELLATION_FLOW
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User cancels the metro booking
-  #   config:
-  #     $ref: ./Metro/TECHNICAL_CANCELLATION_FLOW.yaml
-  # - type: playground
-  #   id: USER_CANCELLATION_FLOW
-  #   usecase: Metro
-  #   tags:
-  #     - WORKBENCH
-  #     - MANDATORY
-  #     - REPORTABLE
-  #   description: User cancels the metro booking
-  #   config:
-  #     $ref: ./Metro/USER_CANCELLATION_FLOW.yaml
+  - type: playground
+    id: METRO_CARD_PURCHASE
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User uses station code for searching metro
+    config:
+      $ref: ./Metro/METRO_CARD_PURCHASE.yaml
+  - type: playground
+    id: METRO_CARD_RECHARGE
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User uses station code for searching metro
+    config:
+      $ref: ./Metro/METRO_CARD_RECHARGE.yaml
+  - type: playground
+    id: METRO_MASTER_SEARCH_FLOW
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User searches for metro
+    config:
+      $ref: ./Metro/METRO_MASTER_SEARCH_FLOW.yaml
+  - type: playground
+    id: METRO_UNLIMITED_PASS_FLOW
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User uses station code for searching metro
+    config:
+      $ref: ./Metro/METRO_UNLIMITED_PASS_FLOW.yaml
+  - type: playground
+    id: PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User uses station code for searching metro
+    config:
+      $ref: ./Metro/PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW.yaml
+  - type: playground
+    id: PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW_WITH_IGM(v-1.0.0)
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User uses station code for searching metro
+    config:
+      $ref: ./Metro/PURCHASE_JOURNEY_STATION_CODE_BASED_FLOW_WITH_IGM_v-1_0_0_.yaml
+  - type: playground
+    id: TECHNICAL_CANCELLATION_FLOW
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User cancels the metro booking
+    config:
+      $ref: ./Metro/TECHNICAL_CANCELLATION_FLOW.yaml
+  - type: playground
+    id: USER_CANCELLATION_FLOW
+    usecase: Metro
+    tags:
+      - WORKBENCH
+      - MANDATORY
+      - REPORTABLE
+    description: User cancels the metro booking
+    config:
+      $ref: ./Metro/USER_CANCELLATION_FLOW.yaml
+
