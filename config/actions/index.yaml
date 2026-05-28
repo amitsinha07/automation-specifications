@@ -22,6 +22,7 @@ supportedActions:
   confirm:
     - on_confirm
     - status
+    - on_status
   on_confirm:
     - status
     - cancel
@@ -106,10 +107,11 @@ apiProperties:
       - on_init
   on_confirm:
     async_predecessor: confirm
-    transaction_partner:
-      - init
-      - on_init
-      - confirm
+    # transaction_partner:
+    #   - init
+    #   - on_init
+    #   - confirm
+    transaction_partner: []
   status:
     async_predecessor: null
     transaction_partner:
