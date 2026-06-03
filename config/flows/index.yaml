@@ -69,7 +69,7 @@ flows:
     description: LAMF Credit Line with Offline Journey
     config:
       $ref:  "./LAMF/lamf_credit_line_with_mfc_offline_journey.yaml"
-   - type: playground
+  - type: playground
     id: lamf_credit_line_with_mfc_single_redirection
     meta:
       order: 2
