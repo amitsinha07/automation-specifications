@@ -114,7 +114,7 @@ steps:
             ttl: PT30S
             bpp_id: dev-workbench.ondc.tech
             bpp_uri: >-
-              https://dev-workbench.ondc.tech/api-service/ONDC:FIS12/2.3.0/seller
+              https://dev-workbench.ondc.tech/api-service/ONDC:TRV11/2.1.0/seller
             version: 2.1.0
             location:
               country:
@@ -1432,14 +1432,14 @@ transaction_history:
       context:
         domain: 'ONDC:TRV11'
         action: select
-        timestamp: '2026-06-08T12:47:30.171Z'
+        timestamp: '2026-06-08T14:29:39.441Z'
         transaction_id: 292a620e-2368-4c49-a7b7-7dd9547a1a12
-        message_id: 739a82ae-b505-4f90-8e34-e42293a5cf13
+        message_id: 6091748c-a409-472a-be74-f60dd89a9025
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
         bpp_id: dev-workbench.ondc.tech
-        bpp_uri: 'https://dev-workbench.ondc.tech/api-service/ONDC:FIS12/2.3.0/seller'
+        bpp_uri: 'https://dev-workbench.ondc.tech/api-service/ONDC:TRV11/2.1.0/seller'
         version: 2.1.0
         location:
           country:
@@ -1463,9 +1463,9 @@ transaction_history:
       context:
         domain: 'ONDC:TRV11'
         action: on_select
-        timestamp: '2026-06-08T12:47:31.337Z'
+        timestamp: '2026-06-08T14:29:39.454Z'
         transaction_id: 292a620e-2368-4c49-a7b7-7dd9547a1a12
-        message_id: 739a82ae-b505-4f90-8e34-e42293a5cf13
+        message_id: 6091748c-a409-472a-be74-f60dd89a9025
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -1667,9 +1667,9 @@ transaction_history:
       context:
         domain: 'ONDC:TRV11'
         action: init
-        timestamp: '2026-06-08T12:47:33.064Z'
+        timestamp: '2026-06-08T14:29:41.448Z'
         transaction_id: 292a620e-2368-4c49-a7b7-7dd9547a1a12
-        message_id: 78c5adb6-5245-40f4-ad7b-357ebb69562f
+        message_id: 470e11cf-8a3e-453d-b56e-dac893f5702c
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -1800,9 +1800,9 @@ transaction_history:
       context:
         domain: 'ONDC:TRV11'
         action: on_init
-        timestamp: '2026-06-08T12:47:34.282Z'
+        timestamp: '2026-06-08T14:29:41.463Z'
         transaction_id: 292a620e-2368-4c49-a7b7-7dd9547a1a12
-        message_id: 78c5adb6-5245-40f4-ad7b-357ebb69562f
+        message_id: 470e11cf-8a3e-453d-b56e-dac893f5702c
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -1963,9 +1963,9 @@ transaction_history:
       context:
         domain: 'ONDC:TRV11'
         action: confirm
-        timestamp: '2026-06-08T12:47:34.765Z'
+        timestamp: '2026-06-08T14:29:41.479Z'
         transaction_id: 292a620e-2368-4c49-a7b7-7dd9547a1a12
-        message_id: a0c3ec5c-b3be-4f35-b385-ef9f0034944d
+        message_id: 6a45702a-8f3b-412a-b146-8d3ff9e2fe1c
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2134,9 +2134,9 @@ transaction_history:
       context:
         domain: 'ONDC:TRV11'
         action: on_confirm
-        timestamp: '2026-06-08T12:47:35.218Z'
+        timestamp: '2026-06-08T14:29:41.491Z'
         transaction_id: 292a620e-2368-4c49-a7b7-7dd9547a1a12
-        message_id: a0c3ec5c-b3be-4f35-b385-ef9f0034944d
+        message_id: 6a45702a-8f3b-412a-b146-8d3ff9e2fe1c
         bap_id: bap.example.com
         bap_uri: 'https://bap.example.com'
         ttl: PT30S
@@ -2324,8 +2324,8 @@ transaction_history:
                 - descriptor:
                     code: SETTLEMENT_BANK_ACCOUNT_NUMBER
                   value: xxxxxxxxxxxxxx
-          created_at: '2026-06-08T12:47:35.222Z'
-          updated_at: '2026-06-08T12:47:35.222Z'
+          created_at: '2026-06-08T14:29:41.497Z'
+          updated_at: '2026-06-08T14:29:41.497Z'
     action: on_confirm
     saved_info: {}
 validationLib: ''
