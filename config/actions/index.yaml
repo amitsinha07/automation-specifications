@@ -41,6 +41,7 @@ supportedActions:
     - cancel
     - issue
     - on_status
+    - on_confirm
   cancel:
     - on_cancel
     - status
