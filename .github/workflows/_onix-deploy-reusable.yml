@@ -25,6 +25,11 @@ on:
         required: false
         type: string
         default: "dev"
+      manual_trigger:
+        description: "Set to true when triggered manually to append run ID to tag"
+        required: false
+        type: boolean
+        default: false
     secrets:
       db_api_key:
         required: false
@@ -112,6 +117,9 @@ jobs:
 
           IMAGE_NAME="${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/ondc-onix-${DOMAIN_NORM}-${VERSION_NORM}"
           IMAGE_TAG="${TAG_PREFIX}-v${VERSION}-${SHORT_SHA}"
+          if [[ "${{ inputs.manual_trigger }}" == "true" ]]; then
+            IMAGE_TAG="${IMAGE_TAG}-${{ github.run_id }}"
+          fi
 
           echo "image_name=${IMAGE_NAME}" >> "$GITHUB_OUTPUT"
           echo "image_tag=${IMAGE_TAG}" >> "$GITHUB_OUTPUT"
